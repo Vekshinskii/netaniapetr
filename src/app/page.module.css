@@ -56,24 +56,12 @@
     transform: scale(1.05);
 }
 
-.whatsapp {
-    display: block;
-    margin-top: 6.8vh;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 1000;
-}
-.whatsapp:hover {
-    transform: scale(1.2);
-}
-.whatsapp_mobile {
-    display: none;
-}
-
 .whatsapp.contact {
     margin-top: 12vh;
+}
+
+.whatsapp {
+    margin-top: 6.8vh;
 }
 
 /* ===== DECOR ===== */

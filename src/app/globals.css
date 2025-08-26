@@ -181,6 +181,44 @@ h2 {
   display: none;
 }
 
+/* ========== WHATSAPP========== */
+.whatsapp {
+  display: block;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  color: #125956;
+}
+
+.whatsapp:hover {
+  transform: scale(1.2);
+  color: #33BEB3;
+}
+
+/* ========== ORDER CONSULTATION BUTTON ========== */
+.order_consultation {
+  background-color: #125956;
+  padding: 12px 20px;
+  width: fit-content;
+  text-wrap: nowrap;
+  color: white;
+  font-size: calc(var(--index) * 0.8);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 12px darkseagreen;
+}
+.order_consultation:hover {
+  background-color: #33BEB3;
+  transform: scale(1.05);
+}
+
 /* ========== 404 ========== */
 .not-found {
   width: 100vw;

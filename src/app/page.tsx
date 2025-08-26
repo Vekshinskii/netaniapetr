@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import Header from "../app/components/Header/index";
 import Footer from "../app/components/Header/index";
+import WhatsappButton from "@/app/components/commons/WhatsappButton";
 
 export default function HomePage() {
     return (
@@ -42,22 +43,8 @@ export default function HomePage() {
                         Запись на консультацию
                     </Link>
 
-                    <Link
-                        href="https://wa.me/972547615507"
-                        aria-label="WhatsApp"
-                        className={styles.wa_link}
-                    >
-                        <img  src="/images/whatsapp.svg" className={styles.whatsapp} alt="watsapp" />
-                    </Link>
+             <WhatsappButton/>
                 </div>
-
-                <Link
-                    href="https://wa.me/972547615507"
-                    aria-label="WhatsApp"
-                    className={styles.wa_link}
-                >
-                    <div className={styles.whatsapp_mobile} />
-                </Link>
 
                 <Image
                     className={styles.elem_light}
