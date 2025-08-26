@@ -34,12 +34,12 @@ export default function HomePage() {
             <div id="main_page" className={styles.main_page}>
                 <div className={styles.content}>
                     <h1 className={styles.title}>
-                        ПЕРЕВОД ДОКУМЕНТОВ <br /> УСЛУГИ В ИЗРАИЛЕ
+                        ПЕРЕВОД ДОКУМЕНТОВ <br /> ГРАЖДАНСТВО В ИЗРАИЛЕ
                     </h1>
 
                     {/* без onClick в серверном компоненте — просто якорь до секции контактов */}
                     <Link href="#contact" className={styles.order_consultation}>
-                        Получить консультацию
+                        Запись на консультацию
                     </Link>
 
                     <Link
@@ -114,12 +114,11 @@ export default function HomePage() {
             </div>
 
             {/* ABOUT + CONTACT */}
-            <section id="about">
+            <section className={styles.about_page} id="about">
                 <div className={styles.contact_page}>
                     <div className={styles.contact_part}>
                         <div id="contact" className={styles.contact_section}>
                             <h1>Контакты</h1>
-
                             <div className={styles.contact_group}>
                                 <div className={styles.contact_text}>
                                     <p>Нетания</p>
@@ -138,7 +137,7 @@ export default function HomePage() {
                             <div className={styles.contact_group}>
                                 <div className={styles.contact_text}>
                                     <p>da321@mail.ru</p>
-                                    <p>da321@gmail.com</p>
+                                    <p>padavidov55@gmail.com</p>
                                 </div>
                                 <Image
                                     src="/images/icon_email.svg"
@@ -151,9 +150,9 @@ export default function HomePage() {
 
                             <div className={styles.contact_group}>
                                 <div className={styles.contact_text}>
-                                    <p>+(972)505-382121</p>
-                                    <p>+(972)544-388831</p>
-                                    <p>+(972)508-621927</p>
+                                    <p>+972-505-382121</p>
+                                    <p>+972-544-4388831</p>
+                                    <p>+972-502-8621927</p>
                                 </div>
                                 <Image
                                     src="/images/icon_phone.webp"
@@ -166,8 +165,8 @@ export default function HomePage() {
 
                             <div className={styles.about_us_text}>
                                 <p>
-                                    Сегодня наша компания называется «Агентство НАТАНИЯ - ПЕТР» и
-                                    по-прежнему находится по тому же адресу, что и 25 лет назад.
+                                    Все эти годы мы находимся по тому же адресу, что и в начале: г. Нетания, улица
+                                    Смилянски 4, этаж 7.
                                 </p>
                             </div>
                         </div>
@@ -175,27 +174,23 @@ export default function HomePage() {
                         <div id="about_info" className={styles.about_info}>
                             <h1>О нас</h1>
                             <div className={styles.about_text}>
-                                <p>
-                                    Наше агентство было создано в 1990 году, когда в Израиль
-                                    приехало много репатриантов. Целью было — оказать всестороннюю
-                                    помощь новым гражданам Израиля по самым разным вопросам.
-                                </p>
-                                <p>
-                                    С годами перечень услуг менялся в зависимости от спроса. Но
-                                    неизменными оставались высокое качество нашей работы,
-                                    внимательное обслуживание и доброжелательное отношение к
-                                    каждому клиенту.
-                                </p>
-                                <p>
-                                    Именно поэтому те, кто хоть раз обратился в наше агентство,
-                                    вновь и вновь возвращаются к нам для решения новых вопросов.
-                                </p>
+                                <h2>«НАТАНИЯ – ПЕТР»</h2>
+                                <p>Наше агентство было создано в 1990 году, когда
+                                в Израиль приехало много репатриантов. За эти годы спектр услуг менялся в зависимости от спроса.
+                                Неизменным оставалось качество нашей работы, высокий уровень обслуживания, вдумчивое
+                                доброжелательное отношение к нашим клиентам.</p>
+
+                                <p>Наверное, поэтому те, кто хоть раз обратились в наше агентство, вновь и вновь обращаются
+                                к нам для решения новых вопросов.</p>
+
+                                <p>Первоначально наша фирма называлась «Агентство НАТАН и ПЕТР». Со временем мы стали работать
+                                по всему Израилю,  менялись не только услуги, название изменилось тоже.
+                                    Сейчас наше агентство называется «Агентство Натания Петр» (1990)</p>
 
                                 <div className={styles.about_us_text_mobile}>
                                     <p>
-                                        Сегодня наша компания называется «Агентство НАТАНИЯ - ПЕТР»
-                                        и по-прежнему находится по тому же адресу, что и 25 лет
-                                        назад.
+                                        Все эти годы мы находимся по тому же адресу, что и в начале: г. Нетания, улица
+                                        Смилянски 4, этаж 7.
                                     </p>
                                 </div>
 

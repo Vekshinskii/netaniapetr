@@ -12,7 +12,7 @@
     align-items: start;
     justify-content: left;
     width: 100vw;
-    height: fit-content;
+    height: 100vh;
 }
 
 .content {
@@ -28,7 +28,7 @@
 .title {
     font-family: "Roboto Condensed", sans-serif;
     font-weight: bold;
-    font-size: calc(var(--index) * 2.2);
+    font-size: calc(var(--index) * 2.1);
     text-align: center;
     text-transform: uppercase;
 }
@@ -59,8 +59,8 @@
 .whatsapp {
     display: block;
     margin-top: 6.8vh;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     transition: transform 0.3s ease;
     z-index: 1000;
@@ -86,7 +86,7 @@
     top: 0;
     right: 0;
     width: calc(var(--index) * 32);
-    height: calc(var(--index) * 37);
+    height: calc(var(--index) * 32);
     z-index: 1;
 }
 .man {
@@ -109,6 +109,8 @@
     justify-content: start;
     padding-inline-start:  calc(var(--index) * 7);
     min-width: fit-content;
+    letter-spacing: 1px;
+    font-size:calc(var(--index) * 1.4);
 }
 .mobile_man {
     display: none;
@@ -145,6 +147,7 @@
     transition: all 0.3s ease;
     min-width: calc(var(--index) * 14);
     margin-right: 20px;
+    letter-spacing: 1px;
 }
 .list_services a:hover {
     color: #33BEB3;
@@ -153,11 +156,11 @@
 }
 
 /* ===== CONTACT + ABOUT ===== */
-#about {
+.about_page {
+    margin-top: 5vh;
     margin-bottom: 1vh;
 }
 .contact_page {
-    padding-top: 30vh;
     width: 100vw;
     height: fit-content;
     display: flex;
@@ -188,9 +191,13 @@
     order: 1;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: stretch;
     justify-content: start;
     padding: 20px;
+    max-width: max-content;
+    h1 {
+        text-align: end;
+    }
 }
 .contact_section img {
     width: calc(var(--index) * 2.6);
@@ -204,7 +211,6 @@
     font-size: calc(var(--index) * 0.9);
     text-align: end;
 }
-
 .contact_group {
     display: flex;
     flex-direction: row;
@@ -212,7 +218,6 @@
     justify-content: end;
     margin-bottom: 1.5vw;
     padding: 20px;
-    width: 23vw;
     min-height: 15vh;
     height: fit-content;
     background-color: #B9F4D4;
@@ -223,11 +228,9 @@
 .about_info {
     display: flex;
     flex-direction: column;
-    /*align-items: start;*/
-    /*justify-content: end;*/
     order: 2;
     padding: 20px;
-    align-items: center;
+    align-items: start;
     justify-content: start;
     width: fit-content;
     height: fit-content;
@@ -237,8 +240,19 @@
     width: 37vw;
     z-index: 2;
     font-family: "Roboto Condensed", sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: calc(var(--index) * 0.9);
+    line-height: 30px;
+
+    p{
+        margin-bottom: 2.5vh;
+        letter-spacing: 1px;
+    }
+
+    h2{
+        font-weight: bolder;
+        margin-bottom: 2.5vh;
+    }
 }
 .contact_text {
     font-family: "Roboto Condensed", sans-serif;
@@ -250,14 +264,15 @@
 }
 
 .about_us_text {
-    margin-top: 6vh;
+    margin-top: 0.5vh;
     font-family: "Roboto Condensed", sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: calc(var(--index) * 0.8);
     text-align: end;
     text-wrap: wrap;
-    width: 37vw;
+    width: 28vw;
     height: fit-content;
+    max-width: max-content;
 }
 
 .contact_group_blue {
@@ -286,29 +301,35 @@
 /* ===== MEDIA ===== */
 
 @media (max-width: 2500px) {
-    .main_page {
-        height: 80vh;
-        align-items: start;
-        justify-content: start;
-    }
-}
-
-@media (max-width: 2000px) {
+    /*.main_page {*/
+    /*    height: 80vh;*/
+    /*    align-items: start;*/
+    /*    justify-content: start;*/
+    /*}*/
     .consult {
         h2 {
             font-size: calc(var(--index) * 0.9);
         }
     }
 }
+
 @media (max-width: 1500px) {
     .title {
         font-size: calc(var(--index) * 2);
     }
     .elem_light {
         width: calc(var(--index) * 25);
+        height:  calc(var(--index) * 36);
     }
     .consult {
+        margin-top: calc(var(--index) * 3);
             padding-inline-start:  calc(var(--index) * 4.5);
+    }
+    .man {
+        top: calc(var(--index) * 13);
+        width: 35vw;
+        height: 35vw;
+        right: 25%;
     }
 }
 
@@ -320,6 +341,12 @@
     }
     .consult {
         padding-inline-start:  calc(var(--index) * 2.5);
+    }
+    .content {
+        margin-top: 18vh;
+    }
+    .man {
+        top: calc(var(--index) * 15);
     }
 }
 @media (max-width: 1030px) {

@@ -21,7 +21,7 @@
 
 .logo {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: calc(var(--index) * 1.5);
     font-family: "Advent Pro", sans-serif;
     text-decoration: none;
     letter-spacing: 1px;
@@ -70,8 +70,11 @@
 .nav_link {
     font-family: "Roboto Condensed", sans-serif;
     text-decoration: none;
-    font-size: 1.8vw;
+    font-size:calc(var(--index) * 1.4);
     will-change: transform, opacity;
+    font-weight: 400;
+    text-wrap: nowrap;
+    margin-inline-end: 16px;
 }
 .nav_link:hover {
     color: #33beb3;
@@ -86,7 +89,7 @@
 }
 .dropdownBtn {
     font-family: "Roboto Condensed", sans-serif;
-    font-size: 1.8rem;
+    font-size:calc(var(--index) * 1.4);
     text-transform: uppercase;
     cursor: pointer;
 
