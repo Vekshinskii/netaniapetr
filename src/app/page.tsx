@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Header from "../app/components/Header/index";
 import Footer from "../app/components/Header/index";
 import WhatsappButton from "@/app/components/commons/WhatsappButton";
+import ConsultButton from "@/app/components/commons/ConsultButton";
 
 export default function HomePage() {
     return (
@@ -38,12 +39,8 @@ export default function HomePage() {
                         ПЕРЕВОД ДОКУМЕНТОВ <br /> ГРАЖДАНСТВО В ИЗРАИЛЕ
                     </h1>
 
-                    {/* без onClick в серверном компоненте — просто якорь до секции контактов */}
-                    <Link href="#contact" className={styles.order_consultation}>
-                        Запись на консультацию
-                    </Link>
-
-             <WhatsappButton/>
+                   <ConsultButton/>
+                   <WhatsappButton/>
                 </div>
 
                 <Image
