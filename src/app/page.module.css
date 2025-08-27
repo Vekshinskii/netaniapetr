@@ -14,7 +14,9 @@
     width: 100vw;
     height: 100vh;
 }
-
+.whatsapp_mobile{
+    display: none;
+}
 .content {
     margin-top: 22vh;
     display: flex;
@@ -188,6 +190,10 @@
     margin-inline-start: 1vw;
     fill: #B9F4D4;
 }
+.icon_phone {
+    height: fit-content;
+    width: calc(var(--index) * 2);
+}
 .contact_section p {
     margin-inline-start: 20px;
     font-family: "Roboto Condensed", sans-serif;
@@ -239,24 +245,19 @@
     }
 }
 .contact_text {
-    font-family: "Roboto Condensed", sans-serif;
-    letter-spacing: 2px;
-    font-size: calc(var(--index) * 0.8);
     text-align: end;
     padding: 0 20px;
-    line-height: 28px;
+    line-height: 30px;
 }
-
 .about_us_text {
     margin-top: 0.5vh;
     font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 1px;
-    font-size: calc(var(--index) * 0.8);
+    font-size: calc(var(--index) * 1);
     text-align: end;
     text-wrap: wrap;
     width: 28vw;
     height: fit-content;
-    max-width: max-content;
 }
 
 .contact_group_blue {
@@ -285,11 +286,6 @@
 /* ===== MEDIA ===== */
 
 @media (max-width: 2500px) {
-    /*.main_page {*/
-    /*    height: 80vh;*/
-    /*    align-items: start;*/
-    /*    justify-content: start;*/
-    /*}*/
     .consult {
         h2 {
             font-size: calc(var(--index) * 0.9);
@@ -333,7 +329,7 @@
         top: calc(var(--index) * 15);
     }
 }
-@media (max-width: 1030px) {
+@media (max-width: 768px) {
     .create {
         display: none;
     }
@@ -367,23 +363,12 @@
     .man {
         display: none;
     }
-    .whatsapp_mobile {
-        display: block;
-        position: fixed;
-        bottom: 2vh;
-        left: 3vw;
-        width: 65px;
-        height: 65px;
-        background-image: url("/public/images/whatsapp.webp");
-        background-size: cover;
-        background-position: center;
-    }
     .order_consultation {
         display: none;
     }
     .list_services {
         top: 21vh;
-        left: 10%;
+        left: 15%;
         width: 90vw;
         height: fit-content;
         display: flex;
@@ -404,14 +389,20 @@
         margin-bottom: 6px;
     }
 .consult {
-    top: 100%;
-    width: 100%;
+    top: 95vh;
+    width: 100vw;
+    padding: 16px;
     text-align: center;
+    justify-content: center;
+    h2{
+        font-size: 1.4rem;
+    }
+
+    height: fit-content;
 }
     .main_page {
         align-items: start;
-        justify-content: right;
-        margin-inline-end: 13%;
+        justify-content: center;
         height: 100vh;
     }
     .content {
@@ -431,6 +422,7 @@
         display: block;
     }
     .title {
+        display: flex;
         margin-inline-start: 3.5%;
         width: 90%;
         font-size: calc(var(--index) * 2);
@@ -472,6 +464,8 @@
     .contact_section {
         order: 2;
         align-items: center;
+        justify-content: center;
+        margin-top: 0;
     }
 
     .contact_section h1 {
@@ -525,20 +519,15 @@
         width: 90%;
     }
     .whatsapp_mobile {
-        position: fixed;
-        display: block;
-        margin-top: 6.8vh;
-        background-image: url("/public/images/whatsapp.webp");
-        fill: #125956;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        transition: transform 0.3s ease;
+        display: flex;
+       position: fixed;
+       bottom: 20px;
+       left: 20px;
         z-index: 1000;
-        bottom: 2vh;
-        left: 3vw;
-        width: 65px;
-        height: 65px;
+
+   }
+    .whatsapp_desk,
+    .consultbutton_desk {
+        display: none;
     }
 }

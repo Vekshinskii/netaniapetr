@@ -2,19 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import Header from "../app/components/Header/index";
-import Footer from "../app/components/Header/index";
+import Footer from "../app/components/Footer/index";
 import WhatsappButton from "@/app/components/commons/WhatsappButton";
 import ConsultButton from "@/app/components/commons/ConsultButton";
 
 export default function HomePage() {
     return (
         <main className={styles.home_wrapper}>
-            {/* Index на всех страницах */}
             <Header />
-            {/* Декоративные оверлеи */}
             <div className="blur-overlay" />
 
-            {/* Mobile light */}
             <Image
                 className={styles.elem_light_mobile}
                 alt="elem_light_mobile"
@@ -23,7 +20,7 @@ export default function HomePage() {
                 height={1400}
                 priority
             />
-            {/* Blue shape (mobile) */}
+
             <Image
                 className={styles.elem_blue_mobile}
                 alt="elem_blue_mobile"
@@ -39,10 +36,10 @@ export default function HomePage() {
                         ПЕРЕВОД ДОКУМЕНТОВ <br /> ГРАЖДАНСТВО В ИЗРАИЛЕ
                     </h1>
 
-                   <ConsultButton/>
-                   <WhatsappButton/>
+                   <ConsultButton className={styles.consultbutton_desk}  style={{ margin: '6.8vh 0' }}/>
+                   <WhatsappButton className={styles.whatsapp_desk}/>
                 </div>
-
+                <WhatsappButton size={70} className={styles.whatsapp_mobile}/>
                 <Image
                     className={styles.elem_light}
                     alt="elem_light"
@@ -148,10 +145,8 @@ export default function HomePage() {
                             </div>
 
                             <div className={styles.about_us_text}>
-                                <p>
                                     Все эти годы мы находимся по тому же адресу, что и в начале: г. Нетания, улица
                                     Смилянски 4, этаж 7.
-                                </p>
                             </div>
                         </div>
 
@@ -186,9 +181,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
-            {/* Footer на всех страницах */}
-            <Footer />
+<Footer/>
         </main>
     );
 }
