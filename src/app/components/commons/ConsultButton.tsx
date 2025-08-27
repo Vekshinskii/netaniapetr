@@ -13,7 +13,7 @@ type ConsultButtonProps = Omit<
 };
 
 export default function ConsultButton({
-                                          href = '#contact',
+                                          href = '/',
                                           className,
                                           style,
                                           children = 'Запись на консультацию',
