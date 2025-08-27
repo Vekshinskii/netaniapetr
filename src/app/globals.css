@@ -15,6 +15,7 @@
 
 html {
   scroll-padding-top: 70px; /* высота header */
+  overflow-x: hidden;
 }
 
 body {
@@ -300,4 +301,9 @@ p {
   }
 
 }
-
+@media (max-width: 768px) {
+  p{
+    line-height: 27px;
+    font-size: 1.4rem;
+  }
+}

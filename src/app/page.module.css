@@ -61,7 +61,13 @@
 .whatsapp.contact {
     margin-top: 12vh;
 }
-
+.whatsapp_section_bottom{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100vw;
+    padding:0 40px 20px 20px;
+}
 /* ===== DECOR ===== */
 .elem_light_mobile,
 .elem_blue_mobile {
@@ -412,9 +418,6 @@
         justify-content: start;
         margin: 12vh 0;
     }
-    .contact_page {
-        padding-top: 0;
-    }
     .about_us_text {
         display: none;
     }
@@ -441,18 +444,21 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: fit-content;
+        height: 100%;
     }
     .about_us_text_mobile {
         display: flex;
         align-items: start;
         justify-content: start;
-        width: 90%;
-        margin: 0 4vh 4vh 0;
+        width: 95%;
+        margin: 0;
         padding: 0;
+        p{
+            margin: 0;
+        }
     }
     .about_us_text_mobile p {
-        text-align: inherit;
+        text-align: start;
         padding: 0;
     }
 
@@ -475,23 +481,23 @@
     }
 
     .about_info {
+        height: fit-content;
         order: 1;
     }
 
     .contact_group {
         width: 90%;
         margin-bottom: 2.5vh;
-        padding: 10px 20px;
+        padding: 10px;
+        p{
+            font-size: 1.4rem;
+        }
     }
 
     .contact_group_blue {
         width: 90%;
         margin-bottom: 2.2vh;
         padding: 10px 20px;
-        line-height: 3.8vh;
-    }
-
-    .contact_group p {
         line-height: 3.8vh;
     }
 
@@ -505,11 +511,6 @@
         margin: 1vw 5vw;
     }
 
-    .contact_page p {
-        font-size: calc(var(--index) * 1.6);
-        letter-spacing: 1px;
-    }
-
     .about_us_text {
         display: none;
     }
@@ -517,6 +518,7 @@
     .about_text {
         margin-top: 1vh;
         width: 90%;
+        margin-bottom: 2vh;
     }
     .whatsapp_mobile {
         display: flex;
@@ -528,6 +530,9 @@
    }
     .whatsapp_desk,
     .consultbutton_desk {
+        display: none;
+    }
+    .whatsapp_section_bottom{
         display: none;
     }
 }

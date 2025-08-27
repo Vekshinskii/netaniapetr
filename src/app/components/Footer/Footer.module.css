@@ -105,9 +105,13 @@
     }
 }
 
-@media (max-width: 520px) {
-    /*.logo { font-size: 14px; }*/
-    /*.nav_to_section { font-size: 12px; }*/
-    .create { display: none; }         /* на очень узких экранах переносим подпись вниз */
+@media (max-width: 678px) {
+    .nav_to_section {
+        font-size: 1.5rem;
+    }
+    .create { display: none; }
+    .tel{
+        font-size: 1.4rem;
+    }
 
 }

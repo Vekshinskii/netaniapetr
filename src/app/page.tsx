@@ -10,8 +10,6 @@ export default function HomePage() {
     return (
         <main className={styles.home_wrapper}>
             <Header />
-            <div className="blur-overlay" />
-
             <Image
                 className={styles.elem_light_mobile}
                 alt="elem_light_mobile"
@@ -172,13 +170,12 @@ export default function HomePage() {
                                         Смилянски 4, этаж 7.
                                     </p>
                                 </div>
-
-                                <Link href="https://wa.me/972547615507" className={styles.wa_link}>
-                                    <div className={`${styles.whatsapp} ${styles.contact}`} />
-                                </Link>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className={styles.whatsapp_section_bottom}>
+                <WhatsappButton className={styles.whatsapp_desk_bottom}/>
                 </div>
             </section>
 <Footer/>
