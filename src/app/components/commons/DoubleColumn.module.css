@@ -4,3 +4,11 @@
     justify-content: space-around;
     align-items: stretch;
 }
+
+.dbl_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+}
