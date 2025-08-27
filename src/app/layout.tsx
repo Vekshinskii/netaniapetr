@@ -1,6 +1,8 @@
-import type { Metadata, Viewport } from "next";
+import type {Metadata, Viewport} from "next";
 import "./globals.css";
-import { Advent_Pro, Roboto_Condensed } from "next/font/google";
+import {Advent_Pro, Roboto_Condensed} from "next/font/google";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 
 const adventPro = Advent_Pro({
     subsets: ["latin", "cyrillic"],
@@ -47,7 +49,11 @@ export default function RootLayout({
     return (
         // прокидываем CSS-переменные шрифтов на html
         <html lang="ru" className={`${adventPro.variable} ${robotoCondensed.variable}`}>
-        <body>{children}</body>
+            <body>
+                <Header/>
+                    {children}
+             <Footer/>
+            </body>
         </html>
     );
 }
