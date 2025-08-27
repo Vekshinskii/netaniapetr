@@ -2,14 +2,14 @@
 import Link from 'next/link';
 import React from 'react';
 
-type ConsultButtonProps = Omit<
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    'href'
-> & {
+type ConsultButtonProps = {
     href?: string;
     className?: string;
     style?: React.CSSProperties;
     children?: React.ReactNode;
+    target?: string;
+    rel?: string;
+    onClickAction?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
 export default function ConsultButton({
@@ -17,14 +17,18 @@ export default function ConsultButton({
                                           className,
                                           style,
                                           children = 'Запись на консультацию',
-                                          ...rest
+                                          target,
+                                          rel,
+                                          onClickAction,
                                       }: ConsultButtonProps) {
     return (
         <Link
             href={href}
             className={['order_consultation', className].filter(Boolean).join(' ')}
             style={style}
-            {...rest}                       // target, rel, onClick и т.п.
+            target={target}
+            rel={rel}
+            onClick={onClickAction}
         >
             {children}
         </Link>

@@ -1,13 +1,10 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-// Google Fonts (с кириллицей)
 import { Advent_Pro, Roboto_Condensed } from "next/font/google";
 
 const adventPro = Advent_Pro({
     subsets: ["latin", "cyrillic"],
-    weight: ["400", "600", "700"],   // укажи только реально используемые веса
+    weight: ["400", "600", "700"],
     variable: "--font-advent",
     display: "swap",
 });

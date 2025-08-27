@@ -7,6 +7,9 @@
 
 :root {
   --index: calc(1vw + 1vh);
+  --wa-color: #125956;
+  --wa-size: 60px;
+
   background-color: rgba(0, 113, 255, 3%);
 }
 
@@ -53,6 +56,12 @@ h2 {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 500;
   font-size:calc(var(--index) * 1.4);
+}
+p {
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 1px;
+  font-size: calc(var(--index) * 1);
+  line-height: 4.3vh;
 }
 /* ========== HEADER ========== */
 .header {
@@ -246,6 +255,9 @@ h2 {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1030px) {
+  h2{
+    font-size: 1.4rem;
+  }
   .nav {
     position: fixed;
     top: -300%;

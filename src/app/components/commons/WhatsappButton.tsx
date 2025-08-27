@@ -2,34 +2,48 @@
 import Link from 'next/link';
 import React from 'react';
 
-type WhatsappButtonProps = Omit<
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    'href'
-> & {
-    href?: string;
+type WhatsappButtonProps = {
+    // Базовые пропсы
+    phone?: string;
+    message?: string;
+
+    // Стилизация
     className?: string;
-    style?: React.CSSProperties;
     svgClassName?: string;
+    style?: React.CSSProperties;
     svgStyle?: React.CSSProperties;
     size?: number;
+
+    // Поведение ссылки
+    openInNewTab?: boolean;
+    onClick?: () => void;
 };
 
 export default function WhatsappButton({
-                                           href = 'https://wa.me/972547615507',
+                                           phone = '972547615507',
+                                           message,
                                            className,
-                                           style,
                                            svgClassName,
+                                           style,
                                            svgStyle,
                                            size = 60,
-                                           ...rest
+                                           openInNewTab = false,
+                                           onClick,
                                        }: WhatsappButtonProps) {
+
+    const href = message
+        ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+: `https://wa.me/${phone}`;
+
     return (
         <Link
             href={href}
             aria-label="WhatsApp"
             className={['wa_link', className].filter(Boolean).join(' ')}
             style={style}
-            {...rest} // target, rel, onClick и т.п.
+            target={openInNewTab ? '_blank' : undefined}
+            rel={openInNewTab ? 'noopener noreferrer' : undefined}
+            onClick={onClick}
         >
             <svg
                 className={['whatsapp', svgClassName].filter(Boolean).join(' ')}
