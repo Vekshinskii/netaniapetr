@@ -1,0 +1,44 @@
+import BackButton from "@/app/components/commons/BackButton";
+import styles from "./page.module.css";
+import TopPageContent from "@/app/components/commons/TopPageContent";
+import { permissions } from "../../utils/Constants";
+import BeforeFooter from "@/app/components/commons/BeforeFooter";
+import ImageArticle from "@/app/components/commons/ImageArticle";
+
+const Permissions = () => {
+    return (
+        <div className={styles.p_wrapper}>
+            <BackButton />
+            <TopPageContent 
+                title={permissions.title} 
+                article={permissions.article} 
+                img_src={permissions.img_src} />
+            
+            <ImageArticle 
+                title={permissions.ic_title}
+                img_src={permissions.ic_img_src}
+                content={permissions.ic_content} />
+            
+            <div className={styles.dbl_col_wrapper}>
+                <div className={styles.dbl_col}>
+                    <h2>{permissions.header_one}</h2>
+                    {permissions.first_par}
+                    <ul>
+                        {permissions.article_one.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                </div>
+                <div className={styles.dbl_col}>
+                    <h2>{permissions.header_two}</h2>
+                    {permissions.sec_par}
+                    <ul>
+                        {permissions.article_two.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                </div>
+            </div>
+
+            <BeforeFooter />
+        </div>
+    );
+}
+
+export default Permissions;

@@ -62,29 +62,29 @@ export default function HomePage() {
                 </div>
 
                 <nav className={styles.list_services} aria-label="Список услуг">
-                    <Link className={styles.navi_to} href="/marriage">
+                    <Link className={styles.navi_to} href="/translate_docs_apostille">
                         Переводы документов.<br/>Апостиль
                     </Link>
-                    <Link className={styles.navi_to} href="/apostille">
+                    <Link className={styles.navi_to} href="/citizenship">
                         Оформление гражданства
                     </Link>
-                    <Link className={styles.navi_to} href="/translation">
+                    <Link className={styles.navi_to} href="/docs_from_abroad">
                         Истребование документов<br/> из-за границы
                     </Link>
-                    <Link className={styles.navi_to} href="/forms">
+                    <Link className={styles.navi_to} href="/permissions">
                         Доверенности, разрешение на выезд
                     </Link>
-                    <Link className={styles.navi_to} href="/will">
+                    <Link className={styles.navi_to} href="/marriage_utah">
                         Браки без выезда. Брак<br/> в штате Юта
                     </Link>
-                    <Link className={styles.navi_to} href="/parentage">
+                    <Link className={styles.navi_to} href="/stupro">
                         Совместное проживание.<br/>СТУПРО
                     </Link>
-                    <Link className={styles.navi_to} href="/document-preparation">
+                    <Link className={styles.navi_to} href="/divorces">
                         Разводы
                     </Link>
-                    <Link className={styles.navi_to} href="/parent-citizenship">
-                        Подтверждение отцовства/ <br/>материнства
+                    <Link className={styles.navi_to} href="/paternity_proof">
+                        Подтверждение отцовства <br/>
                     </Link>
                     <Link className={styles.navi_to} href="/cis-documents">
                         Завещание. Наследство
