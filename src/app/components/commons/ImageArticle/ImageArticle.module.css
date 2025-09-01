@@ -3,6 +3,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 8vw;
+    margin-bottom: calc(var(--index) * 3);
+    p{
+        font-size: calc(var(--index) * 1);
+        line-height: calc(var(--index) * 1.5);
+        padding: 20px;
+    }
+    h1 {
+        padding: 20px 40px;
+    }
+    h2 {
+        padding: calc(var(--index) * 0.5);
+    }
 }
 
 .ia_content_wrapper {

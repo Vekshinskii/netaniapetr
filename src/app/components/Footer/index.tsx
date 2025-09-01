@@ -33,8 +33,8 @@ export default function Footer() {
                         className={styles.phone_icon}
                         src="/images/icon_phon_header.webp"
                         alt="Телефон"
-                        width={22}
-                        height={22}
+                        width={30}
+                        height={30}
                     />
                     <span>+(972)50-5382121</span>
                 </a>

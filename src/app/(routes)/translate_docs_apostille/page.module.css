@@ -1,3 +1,20 @@
 .tda_wrapper {
-    margin-top: 70px;
+    margin-top: 80px;
+}
+.info_apostille {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    padding: 0 8vw;
+    margin-bottom: calc(var(--index) * 3);
+    margin-top: 5vh;
+    h2 {
+        text-align: start;
+        padding-bottom: calc(var(--index) * 0.5);
+    }
+    p{
+        font-size: calc(var(--index) * 1);
+        line-height: calc(var(--index) * 1.5);
+    }
 }

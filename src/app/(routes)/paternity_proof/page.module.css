@@ -5,14 +5,38 @@
 .dbl_col_wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch;
-}
-
-.dbl_col {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 40vw;
+    padding: 0 8vw;
+    gap: 10vw;
+    margin-bottom: 10vh;
+    p{
+        padding: 2vh 0;
+        text-align: start;
+    }
+    h2 {
+        padding: 32px 0;
+        text-align: start;
+        margin: 0;
+    }
+    ul {
+        li{
+            margin-inline-start: 2vw;
+            font-family: "Roboto Condensed", sans-serif;
+            letter-spacing: 1px;
+            font-size: calc(var(--index) * 1);
+            line-height: calc(var(--index) * 1.5);
+        }
+    }
+}
+
+.dbl_col2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    h2 {
+        text-align: center;
+    }
 }

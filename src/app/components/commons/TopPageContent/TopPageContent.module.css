@@ -1,0 +1,30 @@
+.tpc_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: calc(var(--index) * 3);
+    padding: 0 8vw;
+}
+
+.tpc_article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+}
+.tpc_article h1 {
+    margin-bottom: 3vw;
+}
+.tpc_article p {
+    margin-bottom: 3vw;
+}
+.tpc_image_wapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 35%;
+}

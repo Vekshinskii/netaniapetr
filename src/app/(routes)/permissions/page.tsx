@@ -1,9 +1,9 @@
-import BackButton from "@/app/components/commons/BackButton";
+import BackButton from "@/app/components/commons/BackButton/BackButton";
 import styles from "./page.module.css";
-import TopPageContent from "@/app/components/commons/TopPageContent";
+import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
 import { permissions } from "../../utils/Constants";
-import BeforeFooter from "@/app/components/commons/BeforeFooter";
-import ImageArticle from "@/app/components/commons/ImageArticle";
+import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
+import ImageArticle from "@/app/components/commons/ImageArticle/ImageArticle";
 
 const Permissions = () => {
     return (
@@ -22,14 +22,14 @@ const Permissions = () => {
             <div className={styles.dbl_col_wrapper}>
                 <div className={styles.dbl_col}>
                     <h2>{permissions.header_one}</h2>
-                    {permissions.first_par}
+                    <p>{permissions.first_par}</p>
                     <ul>
                         {permissions.article_one.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                 </div>
                 <div className={styles.dbl_col}>
                     <h2>{permissions.header_two}</h2>
-                    {permissions.sec_par}
+                    <p>{permissions.sec_par}</p>
                     <ul>
                         {permissions.article_two.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>

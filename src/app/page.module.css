@@ -4,15 +4,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 10px;
 }
 
 /* ===== MAIN PAGE ===== */
 .main_page {
+    position: relative;
     display: flex;
     align-items: start;
     justify-content: left;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height:  100vh;
 }
 .whatsapp_mobile{
     display: none;
@@ -25,6 +27,7 @@
     justify-content: center;
     width: 50vw;
     z-index: 3;
+    text-wrap: nowrap;
 }
 
 .title {
@@ -88,6 +91,12 @@
     width: 30vw;
     height: 30vw;
     z-index: 2;
+    border-radius:50%;
+    clip-path: circle(50%);
+    overflow:hidden;
+}
+.man_mobile {
+    display: none;
 }
 .consult {
     position: absolute;
@@ -101,8 +110,10 @@
     justify-content: start;
     padding-inline-start:  calc(var(--index) * 7);
     min-width: fit-content;
-    letter-spacing: 1px;
-    font-size:calc(var(--index) * 1.4);
+
+    h2 {
+        font-size: 1.5vw;
+    }
 }
 .mobile_man {
     display: none;
@@ -149,7 +160,6 @@
 
 /* ===== CONTACT + ABOUT ===== */
 .about_page {
-    margin-top: 5vh;
     margin-bottom: 1vh;
 }
 .contact_page {
@@ -246,8 +256,8 @@
     }
 
     h2{
-        font-weight: bolder;
         margin-bottom: 2.5vh;
+        font-size:calc(var(--index) * 1.2);
     }
 }
 .contact_text {
@@ -292,11 +302,11 @@
 /* ===== MEDIA ===== */
 
 @media (max-width: 2500px) {
-    .consult {
-        h2 {
-            font-size: calc(var(--index) * 0.9);
-        }
-    }
+    /*.consult {*/
+    /*    h2 {*/
+    /*        font-size: calc(var(--index) * 0.9);*/
+    /*    }*/
+    /*}*/
 }
 
 @media (max-width: 1500px) {
@@ -312,7 +322,7 @@
             padding-inline-start:  calc(var(--index) * 4.5);
     }
     .man {
-        top: calc(var(--index) * 13);
+        top: calc(var(--index) * 10);
         width: 35vw;
         height: 35vw;
         right: 25%;
@@ -331,13 +341,17 @@
     .content {
         margin-top: 18vh;
     }
-    .man {
-        top: calc(var(--index) * 15);
-    }
 }
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
     .create {
         display: none;
+    }
+    .man_mobile {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        z-index: 4;
     }
     .elem_blue_mobile {
         position: absolute;
@@ -365,6 +379,7 @@
     }
     .main_page {
         overflow: hidden;
+        justify-content: center;
     }
     .man {
         display: none;
@@ -392,25 +407,23 @@
         align-items: center;
         font-size: calc(var(--index) * 1.3);
         padding: 8px 12px;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 .consult {
+    display: block;
     top: 95vh;
-    width: 100vw;
+    left: 0;
+    width: 100%;
     padding: 16px;
     text-align: center;
     justify-content: center;
-    h2{
-        font-size: 1.4rem;
-    }
-
     height: fit-content;
-}
-    .main_page {
-        align-items: start;
-        justify-content: center;
-        height: 100vh;
+    z-index: 4;
+    h2{
+        font-size: 1.2rem;
     }
+}
+
     .content {
         width: 82%;
         height: fit-content;
@@ -489,16 +502,18 @@
         width: 90%;
         margin-bottom: 2.5vh;
         padding: 10px;
-        p{
-            font-size: 1.4rem;
-        }
     }
-
+    .contact_text {
+        p {
+        font-size: calc(var(--index) * 1.6);
+            line-height: 35px;
+    }
+    }
     .contact_group_blue {
         width: 90%;
         margin-bottom: 2.2vh;
         padding: 10px 20px;
-        line-height: 3.8vh;
+        line-height: 4vh;
     }
 
     .contact_group img {
@@ -519,12 +534,15 @@
         margin-top: 1vh;
         width: 90%;
         margin-bottom: 2vh;
+        h2{
+            font-size: 1.4rem;
+        }
     }
     .whatsapp_mobile {
         display: flex;
        position: fixed;
        bottom: 20px;
-       left: 20px;
+       right: 20px;
         z-index: 1000;
 
    }

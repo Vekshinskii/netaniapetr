@@ -1,9 +1,9 @@
-import BackButton from "@/app/components/commons/BackButton";
+import BackButton from "@/app/components/commons/BackButton/BackButton";
 import styles from "./page.module.css";
-import TopPageContent from "@/app/components/commons/TopPageContent";
+import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
 import { paternity_proof } from "../../utils/Constants";
-import BeforeFooter from "@/app/components/commons/BeforeFooter";
-import DoubleColumn from "@/app/components/commons/DoubleColumn";
+import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
+import DoubleColumn from "@/app/components/commons/DoubleColumn/DoubleColumn";
 
 const PaternityProof = () => {
     return (
@@ -23,12 +23,12 @@ const PaternityProof = () => {
             <div className={styles.dbl_col_wrapper}>
                 <div className={styles.dbl_col}>
                     <h2>{paternity_proof.last_header_one}</h2>
-                    {paternity_proof.frst_par}
+                    <p>{paternity_proof.frst_par}</p>
                     <ul>
                         {paternity_proof.last_article_one.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                 </div>
-                <div className={styles.dbl_col}>
+                <div className={styles.dbl_col2}>
                     <h2>{paternity_proof.last_header_two}</h2>
                 </div>
             </div>

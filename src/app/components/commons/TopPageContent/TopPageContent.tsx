@@ -1,7 +1,7 @@
 import styles from "./TopPageContent.module.css";
 import Image from "next/image";
-import WhatsappButton from "./WhatsappButton";
-import ConsultButton from "./ConsultButton";
+import ConsultButton from "../ConsultButton";
+import BackButton from "@/app/components/commons/BackButton/BackButton";
 
 interface ITopPageContent {
     title: string;
@@ -17,7 +17,7 @@ const TopPageContent: React.FC<ITopPageContent> = ({
     return (
         <div className={styles.tpc_wrapper}>
             <div className={styles.tpc_article}>
-                <h2>{title}</h2>
+                <h1>{title}</h1>
                 <p>{article}</p>
                 <ConsultButton />
             </div>
@@ -25,10 +25,9 @@ const TopPageContent: React.FC<ITopPageContent> = ({
                 <Image 
                     src={img_src} 
                     alt="article image"
-                    width={450}
-                    height={450} 
+                    width={400}
+                    height={400}
                 />
-                <WhatsappButton />
             </div>
         </div>
     );

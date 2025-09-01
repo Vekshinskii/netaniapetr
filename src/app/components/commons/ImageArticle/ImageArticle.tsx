@@ -18,8 +18,8 @@ const ImageArticle: React.FC<IImageArticle> = ({title, img_title, img_src, conte
                     <Image 
                         src={img_src} 
                         alt="article image"
-                        width={200}
-                        height={200} 
+                        width={150}
+                        height={150}
                     />
                 </div>
                 <p>

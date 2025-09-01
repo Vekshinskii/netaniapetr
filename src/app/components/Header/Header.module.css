@@ -406,6 +406,7 @@
         letter-spacing: 1px;
         text-align: center;
         z-index: 400;
+        text-wrap: nowrap;
     }
     .burgerMenu {
         display: flex;

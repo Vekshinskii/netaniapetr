@@ -1,8 +1,8 @@
-import BackButton from "@/app/components/commons/BackButton";
+import BackButton from "@/app/components/commons/BackButton/BackButton";
 import styles from "./page.module.css";
-import TopPageContent from "@/app/components/commons/TopPageContent";
+import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
 import { stupro } from "../../utils/Constants";
-import BeforeFooter from "@/app/components/commons/BeforeFooter";
+import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
 
 const Stupro = () => {
     return (
@@ -22,30 +22,30 @@ const Stupro = () => {
                 </div>
                 <div className={styles.dbl_col}>
                     <h2>{stupro.header_two}</h2>
-                     {stupro.first_par}
+                    <p>{stupro.first_par}</p>
                     <ul>
                         {stupro.article_two.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                 </div>
             </div>
-
-            <p>{stupro.header_mid}</p>
-            
+            <div className="info_section">
+            <h2>{stupro.header_mid}</h2>
+            </div>
             <div className={styles.dbl_col_wrapper}>
                 <div className={styles.dbl_col}>
                     <h2>{stupro.last_header_one}</h2>
-                    {stupro.sec_par}
+                    <p>{stupro.sec_par}</p>
                     <ul>
                         {stupro.last_article_one.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                 </div>
                 <div className={styles.dbl_col}>
                     <h2>{stupro.last_header_two}</h2>
-                     {stupro.thrd_par}
+                    <p>{stupro.thrd_par}</p>
                     <ul>
                         {stupro.last_article_two.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
-                    {stupro.frth_par}
+                    <p>{stupro.frth_par}</p>
                 </div>
             </div>
 

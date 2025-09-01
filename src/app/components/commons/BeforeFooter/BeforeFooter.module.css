@@ -4,4 +4,6 @@
     justify-content: space-around;
     align-items: center;
     width: 100vw;
+    padding: 0 8vw;
+    margin-bottom: calc(var(--index) * 3);
 }

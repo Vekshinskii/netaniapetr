@@ -1,4 +1,4 @@
-import styles from "./DoubleColumn.module.css";
+import styles from "../DoubleColumnH2/DoubleColumnH2.module.css";
 
 interface IDoubleColumnH2 {
     header_one: string;
@@ -19,7 +19,7 @@ const DoubleColumnH2: React.FC<IDoubleColumnH2> = ({
                     {article_one.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
             </div>
-            <div className={styles.dbl_col}>
+            <div className={styles.dbl_col2}>
                 <h2>{header_two}</h2>
             </div>
         </div>

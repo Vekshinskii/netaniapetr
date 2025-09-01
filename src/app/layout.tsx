@@ -47,12 +47,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        // прокидываем CSS-переменные шрифтов на html
         <html lang="ru" className={`${adventPro.variable} ${robotoCondensed.variable}`}>
             <body>
                 <Header/>
                     {children}
-             <Footer/>
+                <Footer/>
             </body>
         </html>
     );

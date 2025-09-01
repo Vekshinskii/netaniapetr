@@ -1,9 +1,9 @@
-import BackButton from "@/app/components/commons/BackButton";
+import BackButton from "@/app/components/commons/BackButton/BackButton";
 import styles from "./page.module.css";
-import TopPageContent from "@/app/components/commons/TopPageContent";
-import DoubleColumnH2 from "@/app/components/commons/DoubleColumnH2";
+import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
+import DoubleColumnH2 from "@/app/components/commons/DoubleColumnH2/DoubleColumnH2";
 import { docs_from_abroad } from "../../utils/Constants";
-import BeforeFooter from "@/app/components/commons/BeforeFooter";
+import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
 
 const DocsFromAbroad = () => {
     return (
@@ -17,22 +17,23 @@ const DocsFromAbroad = () => {
             <div className={styles.dbl_col_wrapper}>
                 <div className={styles.dbl_col}>
                     <h2>{docs_from_abroad.header_one}</h2>
-                    {docs_from_abroad.first_par}
+                    <p>{docs_from_abroad.first_par}</p>
                     <ul>
                         {docs_from_abroad.article_one.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
-                    {docs_from_abroad.sec_par}
+                    <p>{docs_from_abroad.sec_par}</p>
                 </div>
                 <div className={styles.dbl_col}>
                     <h2>{docs_from_abroad.header_two}</h2>
-                    {docs_from_abroad.thrd_par}
+                    <p>{docs_from_abroad.thrd_par}</p>
                     <ul>
                         {docs_from_abroad.article_two.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                 </div>
             </div>
-
-            <p>{docs_from_abroad.header_mid}</p>
+            <div className="info_section">
+            <h2>{docs_from_abroad.header_mid}</h2>
+            </div>
             <DoubleColumnH2 
                 header_one={docs_from_abroad.last_header_one}
                 article_one={docs_from_abroad.last_article_one}

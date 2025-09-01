@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import Header from "../app/components/Header/index";
-import Footer from "../app/components/Footer/index";
-import WhatsappButton from "@/app/components/commons/WhatsappButton";
+import WhatsappButton from "@/app/components/commons/WhatsappButton/WhatsappButton";
 import ConsultButton from "@/app/components/commons/ConsultButton";
 
 export default function HomePage() {
@@ -28,6 +27,15 @@ export default function HomePage() {
                 priority
             />
 
+            <Image
+                className={styles.man_mobile}
+                alt="man_mobile"
+                src="/images/man.png"
+                width={165}
+                height={245}
+                priority
+            />
+
             <div id="main_page" className={styles.main_page}>
                 <div className={styles.content}>
                     <h1 className={styles.title}>
@@ -37,7 +45,7 @@ export default function HomePage() {
                    <ConsultButton className={styles.consultbutton_desk}  style={{ margin: '6.8vh 0' }}/>
                    <WhatsappButton className={styles.whatsapp_desk}/>
                 </div>
-                <WhatsappButton size={70} className={styles.whatsapp_mobile}/>
+                <WhatsappButton size={60} className={styles.whatsapp_mobile}/>
                 <Image
                     className={styles.elem_light}
                     alt="elem_light"
@@ -51,15 +59,13 @@ export default function HomePage() {
                     <Image
                         className={styles.man}
                         alt="man"
-                        src="/images/ring_man.webp"
+                        src="/images/Hero-Media.png"
                         width={720}
                         height={720}
                         priority
                     />
                 </div>
-                <div className={styles.consult}>
-                    <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
-                </div>
+
 
                 <nav className={styles.list_services} aria-label="Список услуг">
                     <Link className={styles.navi_to} href="/translate_docs_apostille">
@@ -90,8 +96,11 @@ export default function HomePage() {
                         Завещание. Наследство
                     </Link>
                 </nav>
-            </div>
 
+            </div>
+            <div className={styles.consult}>
+                <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
+            </div>
             {/* ABOUT + CONTACT */}
             <section className={styles.about_page} id="about">
                 <div className={styles.contact_page}>
@@ -178,7 +187,6 @@ export default function HomePage() {
                 <WhatsappButton className={styles.whatsapp_desk_bottom}/>
                 </div>
             </section>
-<Footer/>
         </main>
     );
 }
