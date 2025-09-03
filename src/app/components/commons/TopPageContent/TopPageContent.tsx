@@ -17,23 +17,23 @@ const TopPageContent: React.FC<ITopPageContent> = ({
     return (
         <div className={styles.tpc_container}>
             <div className={styles.tpc_back_button}>
-            <BackButton/>
+                <BackButton/>
             </div>
-        <div className={styles.tpc_wrapper}>
-            <div className={styles.tpc_article}>
-                <h1>{title}</h1>
-                <p>{article}</p>
-                <ConsultButton  className={styles.top_button}/>
+            <div className={styles.tpc_wrapper}>
+                <div className={styles.tpc_article}>
+                    <h1>{title}</h1>
+                    <p>{article}</p>
+                    <ConsultButton  className={styles.top_button}/>
+                </div>
+                <div className={styles.tpc_image_wapp}>
+                    <Image 
+                        src={img_src} 
+                        alt="article image"
+                        width={400}
+                        height={400}
+                    />
+                </div>
             </div>
-            <div className={styles.tpc_image_wapp}>
-                <Image 
-                    src={img_src} 
-                    alt="article image"
-                    width={400}
-                    height={400}
-                />
-            </div>
-        </div>
         </div>
     );
 }

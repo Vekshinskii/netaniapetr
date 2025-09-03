@@ -92,7 +92,7 @@ export default function HomePage() {
                     <Link className={styles.navi_to} href="/paternity_proof">
                         Подтверждение отцовства <br/>
                     </Link>
-                    <Link className={styles.navi_to} href="/cis-documents">
+                    <Link className={styles.navi_to} href="/inheritance_testament">
                         Завещание. Наследство
                     </Link>
                 </nav>

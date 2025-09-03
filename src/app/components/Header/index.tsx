@@ -82,31 +82,31 @@ export default function Header() {
                                 dropdownOpen ? styles.show : ""
                             }`}
                         >
-                            <Link className={styles.navi_to} href="/marriage">
+                            <Link className={styles.navi_to} href="/translate_docs_apostille">
                                 Переводы документов. Апостиль
                             </Link>
-                            <Link className={styles.navi_to} href="/apostille">
+                            <Link className={styles.navi_to} href="/citizenship">
                                 Оформление гражданства
                             </Link>
-                            <Link className={styles.navi_to} href="/translation">
+                            <Link className={styles.navi_to} href="/docs_from_abroad">
                                 Истребование документов из-за границы
                             </Link>
-                            <Link className={styles.navi_to} href="/forms">
+                            <Link className={styles.navi_to} href="/permissions">
                                 Доверенности, разрешение на выезд
                             </Link>
-                            <Link className={styles.navi_to} href="/will">
+                            <Link className={styles.navi_to} href="/marriage_utah">
                                 Браки без выезда. Брак в штате Юта
                             </Link>
-                            <Link className={styles.navi_to} href="/parentage">
+                            <Link className={styles.navi_to} href="/stupro">
                                 Совместное проживание. СТУПРО
                             </Link>
-                            <Link className={styles.navi_to} href="/document-preparation">
+                            <Link className={styles.navi_to} href="/divorces">
                                 Разводы
                             </Link>
-                            <Link className={styles.navi_to} href="/parent-citizenship">
+                            <Link className={styles.navi_to} href="/paternity_proof">
                                 Подтверждение отцовства
                             </Link>
-                            <Link className={styles.navi_to} href="/cis-documents">
+                            <Link className={styles.navi_to} href="/inheritance_testament">
                                 Завещание. Наследство
                             </Link>
                         </div>
