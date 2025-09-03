@@ -8,7 +8,9 @@ const BeforeFooter = () => {
             <div className={styles.bf_wrapper_back}>
             <BackButton/>
             </div>
+            <div className={styles.bf_button_section}>
             <ConsultButton className={styles.bf_wrapper_button}/>
+            </div>
         </div>
     );
 };

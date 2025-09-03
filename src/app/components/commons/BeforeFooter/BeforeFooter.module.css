@@ -1,18 +1,26 @@
 .bf_wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     padding: 0 8vw;
     margin-bottom: calc(var(--index) * 3);
 
-    .bf_wrapper_button {
-        order: 1;
-    }
 }
 .bf_wrapper_back {
     order: 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.bf_button_section {
+    order: 1;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @media (max-width: 678px) {
     .bf_wrapper {
