@@ -3,6 +3,7 @@
 import {useState, useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation"; // NEW
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -10,20 +11,41 @@ export default function Header() {
     const [navActive, setNavActive] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const pathname = usePathname(); // NEW
+
+    // удобная функция закрыть всё
+    const closeAll = () => {        // NEW
+        setNavActive(false);
+        setDropdownOpen(false);
+    };
 
     useEffect(() => {
-        // Проверка ширины экрана при загрузке и ресайзе
         const checkMobile = () => setIsMobile(window.innerWidth <= 1030);
         checkMobile();
         window.addEventListener("resize", checkMobile);
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
-    // тень при скролле
+    // если выходим из мобильной ширины — всё закрыть
+    useEffect(() => {               // NEW
+        if (!isMobile) {
+            setNavActive(false);
+            setDropdownOpen(false);
+        }
+    }, [isMobile]);
+
+    // тень/фон при скролле + корректная инициализация при reload
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 10);
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        const THRESHOLD = 10;
+        const apply = () => setScrolled(window.scrollY > THRESHOLD);
+        apply();
+        const onScroll = () => setScrolled(window.scrollY > THRESHOLD);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+        };
     }, []);
 
     // запрет скролла при открытом меню
@@ -31,19 +53,26 @@ export default function Header() {
         document.body.style.overflow = navActive ? "hidden" : "";
     }, [navActive]);
 
+    // закрывать меню/дропдаун при смене маршрута (клик по Link) — даже если без перезагрузки
+    useEffect(() => {               // NEW
+        closeAll();
+    }, [pathname]);
+
     return (
         <>
-            <header
-                className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}
-            >
-                <Link href="/" className={styles.logo}>
+            <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+                <Link href="/" className={styles.logo} onClick={closeAll}> {/* NEW */}
                     «НАТАНИЯ <span className={styles.second_part_logo}>– ПЕТР»</span>
                 </Link>
 
                 {/* бургер */}
                 <div
                     className={`${styles.burgerMenu} ${navActive ? styles.active : ""}`}
-                    onClick={() => setNavActive(!navActive)}
+                    onClick={() => {
+                        // переключаем бургер и гарантированно закрываем дропдаун
+                        setNavActive(v => !v);       // NEW
+                        setDropdownOpen(false);      // NEW
+                    }}
                 >
                     <div className={styles.bar}></div>
                     <div className={styles.bar}></div>
@@ -60,55 +89,39 @@ export default function Header() {
                         height={800}
                     />
 
-                    <Link href="#about_info" className={styles.nav_link}>
+                    {/* все ссылки закрывают меню */}
+                    <Link href="#about_info" className={styles.nav_link} onClick={closeAll}>{/* NEW */}
                         О НАС
                     </Link>
-                    <Link href="#contact" className={styles.nav_link}>
+                    <Link href="#contact" className={styles.nav_link} onClick={closeAll}>{/* NEW */}
                         КОНТАКТЫ
                     </Link>
 
-                    <div className={styles.dropdown}
-                         onMouseEnter={() => !isMobile && setDropdownOpen(true)}
-                         onMouseLeave={() => !isMobile && setDropdownOpen(false)}
+                    <div
+                        className={styles.dropdown}
+                        onMouseEnter={() => { if (!isMobile) setDropdownOpen(true); }}
+                        onMouseLeave={() => { if (!isMobile) setDropdownOpen(false); }}
                     >
                         <div
                             className={styles.dropdownBtn}
-                            onClick={() => isMobile && setDropdownOpen(!dropdownOpen)}
+                            onClick={() => {
+                                if (isMobile) setDropdownOpen(o => !o);
+                            }}
                         >
                             УСЛУГИ
                         </div>
-                        <div
-                            className={`${styles.dropdownContent} ${
-                                dropdownOpen ? styles.show : ""
-                            }`}
-                        >
-                            <Link className={styles.navi_to} href="/translate_docs_apostille">
-                                Переводы документов. Апостиль
-                            </Link>
-                            <Link className={styles.navi_to} href="/citizenship">
-                                Оформление гражданства
-                            </Link>
-                            <Link className={styles.navi_to} href="/docs_from_abroad">
-                                Истребование документов из-за границы
-                            </Link>
-                            <Link className={styles.navi_to} href="/permissions">
-                                Доверенности, разрешение на выезд
-                            </Link>
-                            <Link className={styles.navi_to} href="/marriage_utah">
-                                Браки без выезда. Брак в штате Юта
-                            </Link>
-                            <Link className={styles.navi_to} href="/stupro">
-                                Совместное проживание. СТУПРО
-                            </Link>
-                            <Link className={styles.navi_to} href="/divorces">
-                                Разводы
-                            </Link>
-                            <Link className={styles.navi_to} href="/paternity_proof">
-                                Подтверждение отцовства
-                            </Link>
-                            <Link className={styles.navi_to} href="/inheritance_testament">
-                                Завещание. Наследство
-                            </Link>
+
+                        <div className={`${styles.dropdownContent} ${dropdownOpen ? styles.show : ""}`}>
+                            {/* КАЖДАЯ ссылка из дропдауна закрывает всё */}
+                            <Link className={styles.navi_to} href="/translate_docs_apostille" onClick={closeAll}>Переводы документов. Апостиль</Link>
+                            <Link className={styles.navi_to} href="/citizenship" onClick={closeAll}>Оформление гражданства</Link>
+                            <Link className={styles.navi_to} href="/docs_from_abroad" onClick={closeAll}>Истребование документов из-за границы</Link>
+                            <Link className={styles.navi_to} href="/permissions" onClick={closeAll}>Доверенности, разрешение на выезд</Link>
+                            <Link className={styles.navi_to} href="/marriage_utah" onClick={closeAll}>Браки без выезда. Брак в штате Юта</Link>
+                            <Link className={styles.navi_to} href="/stupro" onClick={closeAll}>Совместное проживание. СТУПРО</Link>
+                            <Link className={styles.navi_to} href="/divorces" onClick={closeAll}>Разводы</Link>
+                            <Link className={styles.navi_to} href="/paternity_proof" onClick={closeAll}>Подтверждение отцовства</Link>
+                            <Link className={styles.navi_to} href="/inheritance_testament" onClick={closeAll}>Завещание. Наследство</Link>
                         </div>
                     </div>
 
@@ -120,20 +133,19 @@ export default function Header() {
                             width={800}
                             height={800}
                         />
-                        <form className={styles.form}>
-            <span className={styles.form_group}>
-              <input name="name" id="name" type="text" placeholder="Имя"/>
-            </span>
+                        <form className={styles.form} onSubmit={(e) => { e.preventDefault(); closeAll(); }}>{/* NEW: сабмит тоже закрывает */}
                             <span className={styles.form_group}>
-              <input name="phone" id="phone" type="tel" placeholder="Телефон"/>
-            </span>
-
+                <input name="name" id="name" type="text" placeholder="Имя"/>
+              </span>
+                            <span className={styles.form_group}>
+                <input name="phone" id="phone" type="tel" placeholder="Телефон"/>
+              </span>
                             <div className={styles.form_group}>
-              <textarea
-                  className={styles.customTextarea}
-                  placeholder={`Удобное\nвремя для связи`}
-                  rows={1}
-              />
+                <textarea
+                    className={styles.customTextarea}
+                    placeholder={`Удобное\nвремя для связи`}
+                    rows={1}
+                />
                             </div>
                             <button className={styles.send_button} type="submit">
                                 Отправить
@@ -153,14 +165,8 @@ export default function Header() {
                     +(972)50-5382121
                 </div>
             </header>
-
-            {/* блюр-оверлей */}
-            {navActive && (
-                <div
-                    className={styles.blurOverlay}
-                    onClick={() => setNavActive(false)}
-                />
-            )}
+            {navActive && (<div className={styles.blurOverlay} onClick={closeAll} />
+                )}
         </>
     );
 }

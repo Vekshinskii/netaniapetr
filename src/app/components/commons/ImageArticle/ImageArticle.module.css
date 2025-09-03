@@ -46,6 +46,7 @@
         flex-direction: column;
     }
     .ia_image_wrapper {
+        margin: 0 16px 0 0;
         justify-content: start;
         align-items: flex-start;
         height: fit-content;

@@ -56,6 +56,14 @@
         height: 25vw;
     }
 }
+.whatsapp_desk_services {
+    position: fixed;
+    bottom: 20%;
+    right: 4vw;
+}
+.whatsapp_mobile_services_section {
+    display: none;
+}
 @media(max-width: 678px) {
     .tpc_back_button {
         align-items: flex-end;
@@ -88,4 +96,22 @@
     .tpc_wrapper {
         flex-direction: column;
     }
+    .whatsapp_desk_services {
+        display: none;
+    }
+    .whatsapp_mobile_services_section {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+    .whatsapp_mobile_services {
+        margin-top: -5vh;
+        margin-inline-end: 8vw;
+        width: 50px;
+        height: 50px;
+
+    }
 }
+
+

@@ -2,6 +2,7 @@ import styles from "./TopPageContent.module.css";
 import Image from "next/image";
 import ConsultButton from "../ConsultButton";
 import BackButton from "@/app/components/commons/BackButton/BackButton";
+import WhatsappButton from "@/app/components/commons/WhatsappButton/WhatsappButton";
 
 interface ITopPageContent {
     title: string;
@@ -32,7 +33,11 @@ const TopPageContent: React.FC<ITopPageContent> = ({
                         width={400}
                         height={400}
                     />
+                    <div className={styles.whatsapp_mobile_services_section}>
+                    <WhatsappButton className={styles.whatsapp_mobile_services}/>
                 </div>
+                </div>
+                <WhatsappButton className={styles.whatsapp_desk_services}/>
             </div>
         </div>
     );

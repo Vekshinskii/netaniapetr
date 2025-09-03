@@ -261,7 +261,6 @@
 
     .dropdownBtn {
         position: relative;
-        margin-left: 4vw;
     }
 
     .dropdown:hover .dropdown-content {

@@ -229,6 +229,7 @@ html[dir="rtl"] .slider_wrapper .docs-next{ left:8px; right:auto; }
   opacity: 1;
   transform: scale(1.2);
 }
+
 /* ========== TEL ========== */
 .tel {
   font-family: "Roboto Condensed", sans-serif;
