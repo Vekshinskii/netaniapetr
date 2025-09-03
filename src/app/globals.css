@@ -169,50 +169,59 @@ p {
 }
 
 /* ========== SWIPER ========== */
-.slider_wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100vw;
-  margin-bottom: calc(var(--index) * 3);
-}
-.slider_wrapper .swiper-button-prev,
-.slider_wrapper .swiper-button-next {
-  width: 24px;
-  height: 24px;
-  color: #33BEB3;
-}
-
-.slider_wrapper .swiper { position: relative; }
-.slider_wrapper .swiper-button-prev,
-.slider_wrapper .swiper-button-next {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.slider_wrapper .swiper {
-  width: 97%;
-  height: auto;
-}
-
-.slider_wrapper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding:0 10px;
-}
-
-.slider_wrapper .swiper-pagination {
+/* Обёртка */
+.slider_wrapper{
   position: relative;
-  text-align: center;
-  margin-top: 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100vw;
+  margin-bottom:calc(var(--index)*3);
 }
-.slider_wrapper .swiper-pagination-bullet {
-  background-color: #ccc;   /* неактивная точка */
-  opacity: 0.5;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+.slider_wrapper .swiper{ position:relative; width:97%; height:auto; }
+.slider_wrapper .swiper-slide{ height:auto; display:block; padding:0 10px; }
+
+/* Пагинация */
+.slider_wrapper .swiper-pagination{
+  position:relative; text-align:center; margin-top:20px;
 }
+.slider_wrapper .swiper-pagination-bullet{ background:#ccc; opacity:.5; }
+.slider_wrapper .swiper-pagination-bullet-active{ background:#33BEB3; opacity:1; }
+
+/* Кастомные кнопки */
+.slider_wrapper .docs-prev,
+.slider_wrapper .docs-next{
+  position:absolute; top:50%; transform:translateY(-50%);
+  z-index:10; width:40px; height:40px; border:0; background:transparent;
+  cursor:pointer; display:grid; place-items:center;
+}
+
+/* Левая/правая сторона */
+.slider_wrapper .docs-prev{ left:8px; }
+.slider_wrapper .docs-next{ right:8px; }
+
+/* Иконка: используем один SVG и зеркалим для prev */
+.slider_wrapper .docs-prev::before,
+.slider_wrapper .docs-next::before{
+  content:"";
+  width:24px; height:24px;
+  background:center / contain no-repeat url("/images/Arrow-next.svg"); /* без /public! */
+  filter: none;  /* можно colorize через SVG fill=currentColor */
+}
+.slider_wrapper .docs-prev::before{ transform:scaleX(-1); }
+
+/* По желанию: цвет через currentColor */
+.slider_wrapper .docs-prev, .slider_wrapper .docs-next{ color:#33BEB3; }
+
+/* Заблокированные кнопки (Swiper сам добавляет класс) */
+.slider_wrapper .docs-prev.swiper-button-disabled,
+.slider_wrapper .docs-next.swiper-button-disabled{
+  opacity:.35; pointer-events:none;
+}
+
+/* RTL, если нужно */
+html[dir="rtl"] .slider_wrapper .docs-prev{ right:8px; left:auto; }
+html[dir="rtl"] .slider_wrapper .docs-next{ left:8px; right:auto; }
 
 /* Активная точка */
 .slider_wrapper .swiper-pagination-bullet-active {

@@ -57,16 +57,17 @@ const DoubleColumn: React.FC<IDoubleColumn> = ({
     ];
 
     if (isMobile) {
-        // Мобильная версия: карусель
         const isRTL = typeof document !== 'undefined' && document?.dir === 'rtl';
         return (
             <div className="slider_wrapper">
+                <button className="docs-prev" aria-label="Назад" />
+                <button className="docs-next" aria-label="Вперёд" />
                 <Swiper
                     modules={[Navigation, Pagination, A11y]}
                     slidesPerView={1}
                     spaceBetween={16}
-                    navigation
                     pagination={{ clickable: true }}
+                    navigation={{ prevEl: '.docs-prev', nextEl: '.docs-next' }}
                     autoHeight={true}
                     observer={true}
                     observeParents={true}

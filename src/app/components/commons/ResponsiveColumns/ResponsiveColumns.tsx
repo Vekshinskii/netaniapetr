@@ -53,11 +53,13 @@ export default function ResponsiveColumns({ docs }: { docs: Docs }) {
         const isRTL = typeof document !== 'undefined' && document?.dir === 'rtl';
         return (
             <div className={"styles.responsive_col_wrapper" + " slider_wrapper"}>
+                <button className="docs-prev" aria-label="Назад" />
+                <button className="docs-next" aria-label="Вперёд" />
                 <Swiper
                     modules={[Navigation, Pagination, A11y]}
                     slidesPerView={1}
                     spaceBetween={16}
-                    navigation
+                    navigation={{ prevEl: '.docs-prev', nextEl: '.docs-next' }}
                     pagination={{ clickable: true }}
                     dir={isRTL ? 'rtl' : 'ltr'}
                     autoHeight

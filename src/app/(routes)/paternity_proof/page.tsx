@@ -4,6 +4,7 @@ import TopPageContent from "@/app/components/commons/TopPageContent/TopPageConte
 import {paternity_proof} from "../../utils/Constants";
 import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
 import DoubleColumn from "@/app/components/commons/DoubleColumn/DoubleColumn";
+import DoubleColumnH2 from "@/app/components/commons/DoubleColumnH2/DoubleColumnH2";
 
 const PaternityProof = () => {
     return (
@@ -19,19 +20,10 @@ const PaternityProof = () => {
                 header_two={paternity_proof.header_two}
                 article_two={paternity_proof.article_two}/>
 
-            <div className={styles.dbl_col_wrapper}>
-                <div className={styles.dbl_col}>
-                    <h2>{paternity_proof.last_header_one}</h2>
-                    <p>{paternity_proof.frst_par}</p>
-                    <ul>
-                        {paternity_proof.last_article_one.map((item, i) => <li key={i}>{item}</li>)}
-                    </ul>
-                </div>
-                <div className={styles.dbl_col2}>
-                    <h2>{paternity_proof.last_header_two}</h2>
-                </div>
-            </div>
-
+<DoubleColumnH2 header_one={paternity_proof.last_header_one}
+                header_two={paternity_proof.last_header_two}
+                article_one={paternity_proof.last_article_one}
+                text_one={paternity_proof.last_header_one}/>
             <BeforeFooter/>
         </div>
     );
