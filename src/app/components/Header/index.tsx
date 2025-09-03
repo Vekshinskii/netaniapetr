@@ -3,7 +3,7 @@
 import {useState, useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // NEW
+import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -11,10 +11,10 @@ export default function Header() {
     const [navActive, setNavActive] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const pathname = usePathname(); // NEW
+    const pathname = usePathname();
 
     // удобная функция закрыть всё
-    const closeAll = () => {        // NEW
+    const closeAll = () => {
         setNavActive(false);
         setDropdownOpen(false);
     };
@@ -27,7 +27,7 @@ export default function Header() {
     }, []);
 
     // если выходим из мобильной ширины — всё закрыть
-    useEffect(() => {               // NEW
+    useEffect(() => {
         if (!isMobile) {
             setNavActive(false);
             setDropdownOpen(false);
@@ -54,14 +54,14 @@ export default function Header() {
     }, [navActive]);
 
     // закрывать меню/дропдаун при смене маршрута (клик по Link) — даже если без перезагрузки
-    useEffect(() => {               // NEW
+    useEffect(() => { 
         closeAll();
     }, [pathname]);
 
     return (
         <>
             <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
-                <Link href="/" className={styles.logo} onClick={closeAll}> {/* NEW */}
+                <Link href="/" className={styles.logo} onClick={closeAll}>
                     «НАТАНИЯ <span className={styles.second_part_logo}>– ПЕТР»</span>
                 </Link>
 
@@ -69,9 +69,8 @@ export default function Header() {
                 <div
                     className={`${styles.burgerMenu} ${navActive ? styles.active : ""}`}
                     onClick={() => {
-                        // переключаем бургер и гарантированно закрываем дропдаун
-                        setNavActive(v => !v);       // NEW
-                        setDropdownOpen(false);      // NEW
+                        setNavActive(v => !v); 
+                        setDropdownOpen(false); 
                     }}
                 >
                     <div className={styles.bar}></div>
@@ -90,10 +89,10 @@ export default function Header() {
                     />
 
                     {/* все ссылки закрывают меню */}
-                    <Link href="#about_info" className={styles.nav_link} onClick={closeAll}>{/* NEW */}
+                    <Link href="/#about_info" className={styles.nav_link} onClick={closeAll}>
                         О НАС
                     </Link>
-                    <Link href="#contact" className={styles.nav_link} onClick={closeAll}>{/* NEW */}
+                    <Link href="/#contact" className={styles.nav_link} onClick={closeAll}>
                         КОНТАКТЫ
                     </Link>
 
@@ -112,7 +111,6 @@ export default function Header() {
                         </div>
 
                         <div className={`${styles.dropdownContent} ${dropdownOpen ? styles.show : ""}`}>
-                            {/* КАЖДАЯ ссылка из дропдауна закрывает всё */}
                             <Link className={styles.navi_to} href="/translate_docs_apostille" onClick={closeAll}>Переводы документов. Апостиль</Link>
                             <Link className={styles.navi_to} href="/citizenship" onClick={closeAll}>Оформление гражданства</Link>
                             <Link className={styles.navi_to} href="/docs_from_abroad" onClick={closeAll}>Истребование документов из-за границы</Link>
@@ -133,7 +131,7 @@ export default function Header() {
                             width={800}
                             height={800}
                         />
-                        <form className={styles.form} onSubmit={(e) => { e.preventDefault(); closeAll(); }}>{/* NEW: сабмит тоже закрывает */}
+                        <form className={styles.form} onSubmit={(e) => { e.preventDefault(); closeAll(); }}>
                             <span className={styles.form_group}>
                 <input name="name" id="name" type="text" placeholder="Имя"/>
               </span>
