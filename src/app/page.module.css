@@ -301,14 +301,6 @@
 
 /* ===== MEDIA ===== */
 
-@media (max-width: 2500px) {
-    /*.consult {*/
-    /*    h2 {*/
-    /*        font-size: calc(var(--index) * 0.9);*/
-    /*    }*/
-    /*}*/
-}
-
 @media (max-width: 1500px) {
     .title {
         font-size: calc(var(--index) * 2);

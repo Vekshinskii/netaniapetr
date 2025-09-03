@@ -5,8 +5,10 @@ import ConsultButton from "../ConsultButton";
 const BeforeFooter = () => {
     return (
         <div className={styles.bf_wrapper}>
-            <BackButton />
-            <ConsultButton />
+            <div className={styles.bf_wrapper_back}>
+            <BackButton/>
+            </div>
+            <ConsultButton className={styles.bf_wrapper_button}/>
         </div>
     );
 };

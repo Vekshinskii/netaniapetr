@@ -14,13 +14,13 @@ const DoubleColumnH2: React.FC<IDoubleColumnH2> = ({
     return (
         <div className={styles.dbl_col_wrapper}>
             <div className={styles.dbl_col}>
-                <h2>{header_one}</h2>
+                <h3>{header_one}</h3>
                 <ul>
                     {article_one.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
             </div>
             <div className={styles.dbl_col2}>
-                <h2>{header_two}</h2>
+                <h3>{header_two}</h3>
             </div>
         </div>
     );

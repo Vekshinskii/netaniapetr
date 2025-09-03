@@ -24,8 +24,8 @@
             margin-inline-start: 2vw;
             font-family: "Roboto Condensed", sans-serif;
             letter-spacing: 1px;
-            font-size: calc(var(--index) * 1);
-            line-height: calc(var(--index) * 1.5);
+            font-size: calc(var(--index) * 0.9);
+            line-height: calc(var(--index) * 1.3);
         }
     }
 }

@@ -1,17 +1,15 @@
-import BackButton from "@/app/components/commons/BackButton/BackButton";
 import styles from "./page.module.css";
 import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
-import { divorces } from "../../utils/Constants";
+import {divorces} from "../../utils/Constants";
 import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
 
 const Divorces = () => {
     return (
         <div className={styles.dvrc_wrapper}>
-            <BackButton />
-            <TopPageContent 
-                title={divorces.title} 
-                article={divorces.article} 
-                img_src={divorces.img_src} />
+            <TopPageContent
+                title={divorces.title}
+                article={divorces.article}
+                img_src={divorces.img_src}/>
 
             <div className={styles.dbl_col_wrapper}>
                 <div className={styles.dbl_col}>
@@ -31,7 +29,7 @@ const Divorces = () => {
                 </div>
             </div>
             <div className="info_section">
-            <h2>{divorces.header_mid}</h2>
+                <h2>{divorces.header_mid}</h2>
             </div>
 
             <div className={styles.dbl_col_wrapper}>
@@ -47,7 +45,7 @@ const Divorces = () => {
                 </div>
             </div>
 
-            <BeforeFooter />
+            <BeforeFooter/>
         </div>
     );
 }

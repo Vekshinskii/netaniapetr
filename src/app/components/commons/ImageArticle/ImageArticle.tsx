@@ -11,10 +11,11 @@ interface IImageArticle {
 const ImageArticle: React.FC<IImageArticle> = ({title, img_title, img_src, content}) => {
     return (
         <div className={styles.ia_wrapper}>
-            <h2>{title}</h2>
+            <h3 className={styles.ia_wrapper_title_desk}>{title}</h3>
             <div className={styles.ia_content_wrapper}>
                 <div className={styles.ia_image_wrapper}>
                     <h1>{img_title}</h1>
+                    <h3 className={styles.ia_wrapper_title_mobile}>{title}</h3>
                     <Image 
                         src={img_src} 
                         alt="article image"

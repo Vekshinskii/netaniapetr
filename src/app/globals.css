@@ -59,6 +59,12 @@ h2 {
   font-size:  32px;
   letter-spacing: 1px;
 }
+h3 {
+  font-weight: 500;
+  font-size: calc(var(--index) * 1.4);
+  line-height: calc(var(--index) * 1.5);
+  letter-spacing: 1px;
+}
 p {
   font-family: "Roboto Condensed", sans-serif;
   letter-spacing: 1px;
@@ -69,7 +75,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 0 8vw;
-  margin-bottom: 10vh;
+  margin-bottom: calc(var(--index) * 3);
   text-align: center;
   h2 {
     padding: 20px;
@@ -162,6 +168,58 @@ p {
   color: #33BEB3;
 }
 
+/* ========== SWIPER ========== */
+.slider_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  margin-bottom: calc(var(--index) * 3);
+}
+.slider_wrapper .swiper-button-prev,
+.slider_wrapper .swiper-button-next {
+  width: 24px;
+  height: 24px;
+  color: #33BEB3;
+}
+
+.slider_wrapper .swiper { position: relative; }
+.slider_wrapper .swiper-button-prev,
+.slider_wrapper .swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider_wrapper .swiper {
+  width: 97%;
+  height: auto;
+}
+
+.slider_wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding:0 10px;
+}
+
+.slider_wrapper .swiper-pagination {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}
+.slider_wrapper .swiper-pagination-bullet {
+  background-color: #ccc;   /* неактивная точка */
+  opacity: 0.5;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Активная точка */
+.slider_wrapper .swiper-pagination-bullet-active {
+  background-color: #33BEB3;  /* твой фирменный цвет */
+  opacity: 1;
+  transform: scale(1.2);
+}
 /* ========== TEL ========== */
 .tel {
   font-family: "Roboto Condensed", sans-serif;
@@ -316,5 +374,18 @@ p {
   p{
     line-height: 27px;
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 678px) {
+  .slider_wrapper {
+    padding: 20px;
+  }
+  h3 {
+    font-size: calc(var(--index) * 2);
+    line-height: calc(var(--index) * 2.1);
+  }
+  .order_consultation{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
   }
 }
