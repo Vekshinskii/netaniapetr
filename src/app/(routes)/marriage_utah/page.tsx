@@ -1,4 +1,3 @@
-import BackButton from "@/app/components/commons/BackButton/BackButton";
 import styles from "./page.module.css";
 import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
 import DoubleColumn from "@/app/components/commons/DoubleColumn/DoubleColumn";

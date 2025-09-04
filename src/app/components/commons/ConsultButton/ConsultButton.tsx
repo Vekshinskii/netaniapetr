@@ -6,6 +6,8 @@ type ConsultButtonProps = {
     style?: React.CSSProperties;
     children?: React.ReactNode;
     onClickAction?: () => void;
+    disabled?: boolean;
+    ariaLabel?: string;
 };
 
 export default function ConsultButton({
@@ -13,21 +15,17 @@ export default function ConsultButton({
                                           style,
                                           children = "Запись на консультацию",
                                           onClickAction,
+                                          disabled,
+                                          ariaLabel,
                                       }: ConsultButtonProps) {
-    function handleKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
-        if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();            // чтобы пробел не скроллил страницу
-            onClickAction?.();
-        }
-    }
-
     return (
         <button
             type="button"
             className={["order_consultation", className].filter(Boolean).join(" ")}
             style={style}
             onClick={onClickAction}
-            onKeyDown={handleKeyDown}
+            disabled={disabled}
+            aria-label={ariaLabel}
         >
             {children}
         </button>

@@ -34,10 +34,7 @@ export default function TopPageContent({
 
                     <ConsultButton
                         className={styles.top_button}
-                        onClickAction={(e) => {
-                            e.preventDefault();
-                            setOpen(true);
-                        }}
+                        onClickAction={() => setOpen(true)}
                     />
 
                     <ConsultationModal open={open} onClose={() => setOpen(false)} />

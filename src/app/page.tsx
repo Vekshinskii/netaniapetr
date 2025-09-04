@@ -38,9 +38,7 @@ export default function HomePage() {
                     </h1>
 
                    <ConsultButton className={styles.consultbutton_desk}   style={{ margin: '6.8vh 0' }}
-                    onClickAction={(e) => {
-                    e.preventDefault();
-                    setOpen(true);
+                    onClickAction={() => {setOpen(true);
                 }}
                    />
                     <ConsultationModal open={open} onClose={() => setOpen(false)} />
