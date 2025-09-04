@@ -143,10 +143,10 @@ export default function HomePage() {
                                     <p>+972-502-8621927</p>
                                 </div>
                                 <Image
-                                    src="/images/icon_phone.webp"
+                                    src="/images/icon_tel.svg"
                                     alt="phone"
-                                    width={40}
-                                    height={40}
+                                    width={36}
+                                    height={36}
                                     className={styles.icon_phone}
                                 />
                             </div>

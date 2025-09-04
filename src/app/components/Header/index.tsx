@@ -156,7 +156,7 @@ export default function Header() {
                     <Image
                         className={styles.phone_icon}
                         alt="phone_icon"
-                        src="/images/icon_phon_header.webp"
+                        src="/images/icon_phone.svg"
                         width={32}
                         height={32}
                     />

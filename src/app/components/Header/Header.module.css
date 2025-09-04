@@ -39,6 +39,11 @@
     display: none;
 }
 
+.phone_icon {
+    height: 36px !important;
+    width: 36px !important;
+}
+
 .burgerMenu {
     position: absolute;
     top: 4vw;
