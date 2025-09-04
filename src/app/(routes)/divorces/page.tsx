@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import TopPageContent from "@/app/components/commons/TopPageContent/TopPageContent";
-import {divorces, permissions} from "../../utils/Constants";
+import {divorces} from "../../utils/Constants";
 import BeforeFooter from "@/app/components/commons/BeforeFooter/BeforeFooter";
 import ResponsiveColumns from "@/app/components/commons/ResponsiveColumns/ResponsiveColumns";
 

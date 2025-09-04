@@ -57,7 +57,7 @@ const DoubleColumn: React.FC<IDoubleColumn> = ({
     ];
 
     if (isMobile) {
-        const isRTL = typeof document !== 'undefined' && document?.dir === 'rtl';
+        // const isRTL = typeof document !== 'undefined' && document?.dir === 'rtl';
         return (
             <div className="slider_wrapper">
                 <button className="docs-prev" aria-label="Назад" />
