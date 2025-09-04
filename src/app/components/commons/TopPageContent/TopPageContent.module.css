@@ -47,15 +47,21 @@
 .tpc_image_wapp {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    align-items: flex-start;
     width: 35%;
     order: 1;
-    img{
-        width: 25vw;
-        height: 25vw;
-    }
 }
+.photoWrap{
+    position: relative;
+    width: 25vw;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.photo{
+    object-fit: cover;
+}
+
 .whatsapp_desk_services {
     position: fixed;
     bottom: 20%;
@@ -65,6 +71,9 @@
     display: none;
 }
 @media(max-width: 678px) {
+    .tpc_container {
+        padding: 20px;
+    }
     .tpc_back_button {
         align-items: flex-end;
         justify-content: flex-end;
@@ -81,17 +90,13 @@
         order: 1;
         width: 100%;
     }
-    .tpc_image_wapp{
+    .tpc_image_wapp {
+        width: 100%;
         order: 0;
         margin-bottom: 5vh;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 100%;
-
-        img{
-            width: 60vw;
-            height: 60vw;
-        }
+    }
+    .photoWrap {
+        width: 60vw;
     }
     .tpc_wrapper {
         flex-direction: column;

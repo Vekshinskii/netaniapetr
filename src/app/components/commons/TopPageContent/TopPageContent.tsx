@@ -41,12 +41,20 @@ export default function TopPageContent({
                 </div>
 
                 <div className={styles.tpc_image_wapp}>
-                    <Image src={img_src} alt="article image" width={400} height={400} />
+                    <div className={styles.photoWrap}>
+                        <Image
+                            src={img_src}
+                            alt="article image"
+                            fill                 // <- вместо width/height
+                            className={styles.photo}
+                            priority={false}
+                        />
+                    </div>
+
                     <div className={styles.whatsapp_mobile_services_section}>
-                        <WhatsappButton className={styles.whatsapp_mobile_services} />
+                        <WhatsappButton className={styles.whatsapp_mobile_services}/>
                     </div>
                 </div>
-                <WhatsappButton className={styles.whatsapp_desk_services} />
             </div>
         </div>
     );

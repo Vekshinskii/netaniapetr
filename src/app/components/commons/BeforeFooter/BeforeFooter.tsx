@@ -17,7 +17,7 @@ const BeforeFooter = () => {
             <ConsultButton className={styles.bf_wrapper_button}
                 onClickAction={() => setOpen(true)}
             />
-                <ConsultationModal open={open} onClose={() => setOpen(false)} />
+                <ConsultationModal  open={open} onClose={() => setOpen(false)} />
             </div>
         </div>
     );

@@ -95,7 +95,6 @@ export default function HomePage() {
                         Завещание. Наследство
                     </Link>
                 </nav>
-
             </div>
             <div className={styles.consult_wrapper}>
                 <Image

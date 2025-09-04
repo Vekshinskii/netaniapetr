@@ -6,7 +6,6 @@
     width: 100vw;
     padding: 0 8vw;
     margin-bottom: calc(var(--index) * 3);
-
 }
 .bf_wrapper_back {
     order: 0;
@@ -30,19 +29,19 @@
     .bf_wrapper_back {
         display: flex;
         width: 100%;
+        margin-bottom: 30px;
         align-items: flex-end;
         justify-content: flex-end;
         order: 1;
+
         a {
             align-items: flex-end;
-            padding: 0;
         }
     }
     .bf_wrapper {
         flex-direction: column;
-        .bf_wrapper_button {
-            order: 0;
-            margin: 7vw 0;
-        }
+    }
+    .bf_wrapper_button {
+        margin-bottom: 50px;
     }
 }
