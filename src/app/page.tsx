@@ -1,11 +1,16 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import Header from "../app/components/Header/index";
 import WhatsappButton from "@/app/components/commons/WhatsappButton/WhatsappButton";
-import ConsultButton from "@/app/components/commons/ConsultButton";
+import ConsultButton from "@/app/components/commons/ConsultButton/ConsultButton";
+import ConsultationModal from "@/app/components/ConsultationModal/ConsultationModal";
 
 export default function HomePage() {
+    const [open, setOpen] = React.useState(false);
     return (
         <main className={styles.home_wrapper}>
             <Header />
@@ -26,26 +31,22 @@ export default function HomePage() {
                 height={1024}
                 priority
             />
-
-            <Image
-                className={styles.man_mobile}
-                alt="man_mobile"
-                src="/images/man.png"
-                width={165}
-                height={245}
-                priority
-            />
-
             <div id="main_page" className={styles.main_page}>
                 <div className={styles.content}>
                     <h1 className={styles.title}>
                         ПЕРЕВОД ДОКУМЕНТОВ <br /> ГРАЖДАНСТВО В ИЗРАИЛЕ
                     </h1>
 
-                   <ConsultButton className={styles.consultbutton_desk}  style={{ margin: '6.8vh 0' }}/>
+                   <ConsultButton className={styles.consultbutton_desk}   style={{ margin: '6.8vh 0' }}
+                    onClickAction={(e) => {
+                    e.preventDefault();
+                    setOpen(true);
+                }}
+                   />
+                    <ConsultationModal open={open} onClose={() => setOpen(false)} />
                    <WhatsappButton className={styles.whatsapp_desk}/>
                 </div>
-                <WhatsappButton size={60} className={styles.whatsapp_mobile}/>
+                <WhatsappButton size={50} className={styles.whatsapp_mobile}/>
                 <Image
                     className={styles.elem_light}
                     alt="elem_light"
@@ -98,8 +99,18 @@ export default function HomePage() {
                 </nav>
 
             </div>
-            <div className={styles.consult}>
-                <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
+            <div className={styles.consult_wrapper}>
+                <Image
+                    className={styles.man_mobile}
+                    alt="man_mobile"
+                    src="/images/man.png"
+                    width={155}
+                    height={230}
+                    priority
+                />
+                <div className={styles.consult}>
+                    <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
+                </div>
             </div>
             {/* ABOUT + CONTACT */}
             <section className={styles.about_page} id="about">

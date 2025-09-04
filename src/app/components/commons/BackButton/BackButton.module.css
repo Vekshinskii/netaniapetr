@@ -1,0 +1,83 @@
+.back {
+    --brand: #125956;
+    --accent: #33beb3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: transparent;
+    color: #125956;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1;
+
+    transition: transform .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    background-color .18s ease,
+    box-shadow .18s ease;
+}
+
+.back:hover {
+    transform: scale(1.1);
+}
+
+.back:active {
+    transform: translateY(0);
+}
+
+.back:focus-visible {
+    color: #33BEB3;
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform .18s ease;
+}
+
+.icon :global(img) {
+    position: absolute;
+    width: 6vw;
+    height: fit-content;
+    object-fit: contain;
+   top: 0;
+    left: -2rem;
+
+}
+
+
+.back:hover .icon {
+    transform: translateX(-2px);
+}
+
+.label {
+    white-space: nowrap;
+    font-size: calc(var(--index) * 1);
+}
+
+:global([dir="rtl"]) .back { flex-direction: row-reverse; }
+:global([dir="rtl"]) .icon svg { transform: scaleX(-1); }
+
+/* ========= Адаптация ========= */
+@media (max-width: 768px) {
+    .back {
+        width: fit-content;
+    }
+
+    .icon :global(img) {
+        width: 80%;
+    }
+    .label {
+        font-size: 1.2rem;
+    }
+}
+

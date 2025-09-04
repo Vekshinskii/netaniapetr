@@ -69,7 +69,7 @@
     align-items: end;
     justify-content: end;
     width: 100vw;
-    padding:0 40px 20px 20px;
+    padding:0 60px 40px 20px;
 }
 /* ===== DECOR ===== */
 .elem_light_mobile,
@@ -261,9 +261,12 @@
     }
 }
 .contact_text {
-    text-align: end;
+
     padding: 0 20px;
-    line-height: 30px;
+    p {
+        text-align: end;
+        line-height: 30px;
+    }
 }
 .about_us_text {
     margin-top: 0.5vh;
@@ -335,16 +338,18 @@
     }
 }
 @media (max-width: 1030px) {
+    .home_wrapper {
+        padding: 0;
+    }
     .create {
         display: none;
     }
-    .man_mobile {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left:0;
-        z-index: 4;
-    }
+    /*.man_mobile {*/
+    /*    position: absolute;*/
+    /*    top:0;*/
+    /*    left:0;*/
+    /*    z-index: 4;*/
+    /*}*/
     .elem_blue_mobile {
         position: absolute;
         right: 5%;
@@ -401,21 +406,45 @@
         padding: 8px 12px;
         margin-bottom: 8px;
     }
-.consult {
-    display: block;
-    top: 95vh;
-    left: 0;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    justify-content: center;
-    height: fit-content;
-    z-index: 4;
-    h2{
-        font-size: 1.2rem;
-    }
-}
+/*.consult {*/
+/*    position: fixed;*/
+/*    display: block;*/
+/*   bottom: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    padding: 16px;*/
+/*    text-align: center;*/
+/*    justify-content: center;*/
+/*    height: fit-content;*/
+/*    z-index: 4;*/
 
+/*}*/
+    .consult_wrapper {
+        position: relative;
+        width: 100%;
+    }
+    .consult {
+        position: absolute;
+        background-color: #B9F4D4;
+        margin: 0;
+        text-align: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        padding: 16px;
+        z-index: 9;
+        h2{
+            font-size: 1.2rem;
+        }
+    }
+    .man_mobile {
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        z-index: 5;
+    }
     .content {
         width: 82%;
         height: fit-content;

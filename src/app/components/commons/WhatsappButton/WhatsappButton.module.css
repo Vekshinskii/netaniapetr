@@ -1,8 +1,0 @@
-.root { color: var(--wa-color); }
-.icon  {
-    width: var(--wa-size);
-    height: var(--wa-size);
-    transition: transform .2s ease;
-}
-.root:hover .icon { transform: scale(1.06); }
-

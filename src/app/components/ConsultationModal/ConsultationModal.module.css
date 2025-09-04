@@ -1,0 +1,134 @@
+/* ConsultationModal.module.css (упрощённый) */
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:  rgba(255, 255, 255, 0.6);
+    z-index: 9999;
+    padding: 24px;
+    backdrop-filter: blur(2px);
+    animation: fade .2s ease;
+}
+@keyframes fade { from{opacity:0} to{opacity:1} }
+
+.modal{
+    width: min(560px, 100%);
+    background: #fff;
+    color: #125956;
+    border-radius: 16px;
+    padding: 22px 22px 20px;
+    position: relative;
+    box-shadow: 5px 5px 10px darkseagreen;
+    font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+}
+
+.close{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: transparent;
+    color: #125956;
+    border-radius: 8px;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+.close:hover{
+    color: #33beb3;
+    background: rgba(51,190,179,.08);
+}
+
+.title{
+    margin: 0 0 14px;
+    color: #125956;
+    font: 700 22px/1.2 "Roboto Condensed", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    letter-spacing: .02em;
+}
+
+.form{ display: grid; gap: 14px; }
+.field{ display: grid; gap: 6px; }
+
+.field span{
+    font-size: 12px;
+    color: #125956;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.field input{
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e3efee;
+    border-radius: 12px;
+    background: #f6fbfb;
+    color: #125956;
+    outline: none;
+    transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+.field input::placeholder{ color: #7aa6a2; }
+.field input:focus{
+    border-color: #33beb3;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(51,190,179,.18);
+}
+
+.actions{ display: flex; gap: 10px; margin-top: 4px; }
+
+.submit{
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 2px solid #125956;
+    background: transparent;
+    color: #125956;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform .18s ease, color .18s ease, border-color .18s ease, background-color .18s ease;
+}
+.submit:hover{
+    transform: translateY(-1px);
+    color: #33beb3;
+    border-color: #33beb3;
+    background: rgba(51,190,179,.08);
+}
+
+.secondary{
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 2px dashed #cfe3e1;
+    background: transparent;
+    color: #125956;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.secondary:hover{
+    border-color: #33beb3;
+    color: #33beb3;
+    background: rgba(51,190,179,.06);
+}
+
+.success{
+    padding: 22px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(51,190,179,.12), rgba(51,190,179,.06));
+    border: 2px solid rgba(51,190,179,.35);
+    color: #125956;
+    font: 700 18px/1.3 "Roboto Condensed", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    text-align: center;
+}
+
+@media (max-width:480px){
+    .modal{ padding: 18px 16px; border-radius: 14px; }
+    .title{ font-size: 20px; }
+    .actions{ flex-wrap: wrap; }
+    .submit, .secondary{ width: 100%; justify-content: center; }
+}

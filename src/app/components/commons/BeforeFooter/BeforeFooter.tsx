@@ -1,6 +1,6 @@
 import BackButton from "../BackButton/BackButton";
 import styles from "./BeforeFooter.module.css"
-import ConsultButton from "../ConsultButton";
+import ConsultButton from "../ConsultButton/ConsultButton";
 
 const BeforeFooter = () => {
     return (
