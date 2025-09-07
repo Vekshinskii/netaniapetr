@@ -101,8 +101,8 @@ export default function HomePage() {
                     className={styles.man_mobile}
                     alt="man_mobile"
                     src="/images/man.png"
-                    width={155}
-                    height={230}
+                    width={170}
+                    height={260}
                     priority
                 />
                 <div className={styles.consult}>

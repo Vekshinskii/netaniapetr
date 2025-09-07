@@ -361,7 +361,7 @@
         right: 0;
         display: block;
         width: 95vw;
-        height: 87vh;
+        height: 85vh;
         z-index: 3;
     }
     .main_page {
@@ -387,14 +387,14 @@
         z-index: 3;
     }
     .list_services a {
-        min-height: 5vh;
+        min-height: 4vh;
         width: 75vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: calc(var(--index) * 1.3);
-        padding: 8px 12px;
-        margin-bottom: 7px;
+        padding: 9px 12px;
+        margin-bottom: 6px;
     }
     .consult_wrapper {
         position: relative;
@@ -405,7 +405,7 @@
         background-color: #B9F4D4;
         margin: 0;
         text-align: center;
-        top: 0;
+        top: -30px;
         left: 0;
         width: 100%;
         height: fit-content;
@@ -418,16 +418,16 @@
     .man_mobile {
         display: block;
         position: absolute;
-        bottom: -10px;
+        bottom: 0;
         left: 0;
         z-index: 5;
     }
     .content {
-        width: 82%;
+        width: 100%;
         height: fit-content;
         align-items: center;
         justify-content: start;
-        margin-top: 12vh;
+        margin-top: 11vh;
     }
     .about_us_text {
         display: none;
@@ -437,6 +437,8 @@
     }
     .title {
         display: flex;
+        align-items: center;
+        justify-content: center;
         margin-inline-start: 3.5%;
         width: 90%;
         font-size: calc(var(--index) * 2);
@@ -539,7 +541,7 @@
     .whatsapp_mobile {
         display: flex;
        position: fixed;
-       bottom: 20px;
+       bottom: 50px;
        right: 20px;
         z-index: 1000;
 
