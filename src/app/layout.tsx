@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     // если есть домен — раскомментируй:
     // metadataBase: new URL("https://natania-petr.example"),
     icons: {
-        icon: "/favicon.ico",
-        // apple: "/apple-touch-icon.png",
+        icon: "/favicon.ico"
+        // apple: "/icon-512.png"
     },
-    manifest: "/manifest.webmanifest", // если файла нет — убери эту строку
+    // manifest: "/manifest.webmanifest", // если файла нет — убери эту строку
 };
 
 // Новый способ задания viewport в Next 13.4+/15

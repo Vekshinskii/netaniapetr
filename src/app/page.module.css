@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 /* ===== MAIN PAGE ===== */
@@ -13,7 +14,8 @@
     align-items: start;
     justify-content: left;
     width: 100%;
-    height:  100vh;
+    min-height: 100vh;
+    height: auto;
 }
 .whatsapp_mobile{
     display: none;
@@ -94,9 +96,9 @@
     clip-path: circle(50%);
     overflow:hidden;
 }
-.man_mobile {
-    display: none;
-}
+/*.man_mobile {*/
+/*    display: none;*/
+/*}*/
 .consult {
     position: absolute;
     top:  calc(var(--index) *27);
@@ -206,8 +208,12 @@
     fill: #B9F4D4;
 }
 .icon_phone {
-    height: fit-content;
-    width: calc(var(--index) * 2);
+    height: auto;
+    width: calc(var(--index) * 1.5);
+}
+.icon_map,
+.icon_email {
+    height: auto;
 }
 .contact_section p {
     margin-inline-start: 20px;
@@ -345,7 +351,7 @@
         right: 5%;
         display: block;
         width: 95vw;
-        height: 76vh;
+        height: 70vh;
         top: 20vh;
     }
     .elem_light{
@@ -361,13 +367,13 @@
         right: 0;
         display: block;
         width: 95vw;
-        height: 85vh;
+        height: 84vh;
         z-index: 3;
     }
     .main_page {
         overflow: hidden;
         justify-content: center;
-
+        min-height: 95vh;
     }
     .man {
         display: none;
@@ -387,41 +393,48 @@
         z-index: 3;
     }
     .list_services a {
-        min-height: 4vh;
-        width: 75vw;
+        min-height: fit-content;
+        width: 71vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: calc(var(--index) * 1.3);
-        padding: 9px 12px;
+        padding: 7px 12px;
         margin-bottom: 6px;
     }
     .consult_wrapper {
         position: relative;
         width: 100%;
+        margin-top: -4vh;
+        min-height: fit-content;
     }
     .consult {
-        position: absolute;
+        position: relative;   /* ← ИСПРАВЛЕНО */
         background-color: #B9F4D4;
-        margin: 0;
         text-align: center;
-        top: -30px;
-        left: 0;
         width: 100%;
-        height: fit-content;
+        min-height: fit-content;
         padding: 16px;
         z-index: 9;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        top: -6vh;
         h2{
             font-size: 1.2rem;
         }
     }
-    .man_mobile {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 5;
-    }
+    /*.man_mobile {*/
+    /*    display: block;*/
+    /*    position: absolute;*/
+    /*    bottom: 90%;*/
+    /*    left:0;*/
+    /*    z-index: 5;*/
+    /*    width: 160px !important;*/
+    /*    height: auto !important;*/
+    /*    object-fit: contain;*/
+    /*}*/
     .content {
         width: 100%;
         height: fit-content;
@@ -453,7 +466,7 @@
     }
     .contact_page {
         padding-top: 0;
-        margin-top: 10vh;
+        margin-top: 2vh;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -541,7 +554,7 @@
     .whatsapp_mobile {
         display: flex;
        position: fixed;
-       bottom: 50px;
+       bottom: 7px;
        right: 20px;
         z-index: 1000;
 
@@ -552,5 +565,10 @@
     }
     .whatsapp_section_bottom{
         display: none;
+    }
+}
+@media (max-width: 400px) {
+    .content h1 {
+        font-size: calc(var(--index) * 2);
     }
 }
