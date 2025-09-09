@@ -18,7 +18,6 @@ const robotoCondensed = Roboto_Condensed({
     display: "swap",
 });
 
-// Метаданные для всех страниц
 export const metadata: Metadata = {
     title: "НАТАНИЯ – ПЕТР",
     description: "Перевод документов и смежные услуги в Израиле",
@@ -26,9 +25,8 @@ export const metadata: Metadata = {
     // metadataBase: new URL("https://natania-petr.example"),
     icons: {
         icon: "/favicon.ico",
-        // apple: "/apple-touch-icon.png",
     },
-    manifest: "/manifest.webmanifest", // если файла нет — убери эту строку
+    manifest: "/manifest.webmanifest",
 };
 
 // Новый способ задания viewport в Next 13.4+/15
