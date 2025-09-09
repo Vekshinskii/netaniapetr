@@ -50,9 +50,9 @@ export default function TopPageContent({
                             priority={false}
                         />
                     </div>
-
+                    <WhatsappButton size={60} className={styles.whatsapp_desk_services }/>
                     <div className={styles.whatsapp_mobile_services_section}>
-                        <WhatsappButton className={styles.whatsapp_mobile_services}/>
+                        <WhatsappButton size={50}  className={styles.whatsapp_mobile_services}/>
                     </div>
                 </div>
             </div>

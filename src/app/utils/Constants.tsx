@@ -1,6 +1,6 @@
 export const trans_docs_apostille = {
     title: "ПЕРЕВОД ДОКУМЕНТОВ АПОСТИЛЬ",
-    img_src: "/images/translate_docs_apostille.png",
+    img_src: "/images/translate_docs_apostille.webp",
 
     article: `  Мы предлагаем вам переводы документов любой сложности практически на любые языки.
                 По просьбе клиентов мы можем сделать переводы в течение одного дня.
@@ -27,7 +27,7 @@ export const trans_docs_apostille = {
             ],
     ia_title: "Мы также поможем вам поставить апостиль. Что такое апостиль?", 
     ia_img_title: "АПОСТИЛЬ", 
-    ia_img_src: "/images/apostille_img.png", 
+    ia_img_src: "/images/apostille_img.webp",
     ia_content: `Это важный этап оформления документа для использования в другой стране. 
                     Документ со штампом "Апостиль" действителен во всех странах, присоединившихся 
                     к Гаагской конвенции от 5 октября 1961 года.
@@ -65,7 +65,7 @@ export const trans_docs_apostille = {
 };
 export const marriage_utah = {
     title: "БРАКИ БЕЗ ВЫЕЗДА. БРАК В ШТАТЕ ЮТА",
-    img_src: "/images/marriage_utah.png",
+    img_src: "/images/marriage_utah.webp",
     article: `  Мы накопили большой опыт в регистрации браков между гражданами Израиля и иностранцами из Украины, 
                 Молдовы, России и других стран.
                 Брак в Израиле возможен только между двумя евреями. Если один из супругов не еврей — оформление 
@@ -98,7 +98,7 @@ export const marriage_utah = {
 }
 export const citizenship = {
     title: "ОФОРМЛЕНИЕ ГРАЖДАНСТВА",
-    img_src: "/images/citizenship.png",
+    img_src: "/images/citizenship.webp",
     article: `  Получить израильское гражданство — важный и волнительный шаг для репатриантов и их семей. 
                 Для многих оформление гражданства может казаться сложным и долгим процессом, 
                 но с профессиональной помощью его можно сделать быстрее, проще и спокойнее. `,
@@ -136,7 +136,7 @@ export const citizenship = {
 }
 export const docs_from_abroad = {
     title: "ИСТРЕБОВАНИЕ ДОКУМЕНТОВ ИЗ - ЗА ГРАНИЦЫ",
-    img_src: "/images/docs_from_abroad.png",
+    img_src: "/images/docs_from_abroad.webp",
     article: `  В современном мире люди часто меняют место жительства. Иногда переезд происходит неожиданно, 
                 и не всегда удаётся забрать все необходимые документы. Если вы оказались без них, 
                 мы поможем получить нужные бумаги из ЗАГСов, архивов, вузов и других 
@@ -175,7 +175,7 @@ export const docs_from_abroad = {
 }
 export const stupro = {
     title: "СОВМЕСТНОЕ ПРОЖИВАНИЕ СТУПРО",
-    img_src: "/images/stupro.png",
+    img_src: "/images/stupro.webp",
     article: `  За время нашей работы нами накоплен опыт по многим вопросам взаимодействия с государственными структурами.`,
     header_one: "Проводим консультации по вопросам:",
     header_two: "Совместное проживание",
@@ -217,7 +217,7 @@ export const stupro = {
 }
 export const permissions = {
     title: "ДОВЕРЕННОСТИ, РАЗРЕШЕНИЯ НА ВЫЕЗД",
-    img_src: "/images/permissions.png",
+    img_src: "/images/permissions.webp",
     article: `Доверенности и разрешения 
                 У жителей Израиля часто возникает необходимость оформления доверенностей и различных разрешений.
                 Разрешение на выезд ребенка не всегда просят предъявить на границе, но наши клиенты убедились: 
@@ -248,7 +248,7 @@ export const permissions = {
 
 export const divorces = {
     title: "ОФОРМЛЕНИЕ РАЗВОДА",
-    img_src: "/images/divorces.png",
+    img_src: "/images/divorces.webp",
     article: `Разводы — тоже часть нашей жизни. 
                 Они случаются. Иногда — как освобождение,
                 иногда — как тяжелое испытание. Но важно помнить: даже в этой сложной ситуации вы не одиноки. 
@@ -289,7 +289,7 @@ export const divorces = {
 }
 export const paternity_proof = {
     title: `ПОДТВЕРЖДЕНИЕ ОТЦОВСТВА (בדיקת אבהות)`,
-    img_src: "/images/paternity_proof.png",
+    img_src: "/images/paternity_proof.webp",
     article: `Признание отцовства — это юридический процесс, который устанавливает связь между отцом и ребёнком, 
                 даже если родители не состояли в браке и ребёнок уже вырос.`,
     header_one: "Признание отцовства в Израиле",
@@ -319,7 +319,7 @@ export const paternity_proof = {
 }
 export const inheritance_testament = {
     title: "НАСЛЕДСТВО И ЗАВЕЩАНИЕ",
-    img_src: "/images/inheritance_testament.png",
+    img_src: "/images/inheritance_testament.webp",
     article: `  Наследство можно получить по закону или по завещанию. Если завещание отсутствует, процесс вступления в наследство становится более сложным и нередко
                 вызывает конфликты между наследниками `,
     header_one: "Почему важно оставить завещанине?",

@@ -58,9 +58,9 @@ export default function HomePage() {
                     <Image
                         className={styles.man}
                         alt="man"
-                        src="/images/Hero-Media.png"
+                        src="/images/Hero-Media.webp"
                         width={720}
-                        height={720}
+                        height = {720}
                         priority
                     />
                 </div>
@@ -97,14 +97,14 @@ export default function HomePage() {
                 </nav>
             </div>
             <div className={styles.consult_wrapper}>
-                <Image
-                    className={styles.man_mobile}
-                    alt="man_mobile"
-                    src="/images/man.png"
-                    width={170}
-                    height={260}
-                    priority
-                />
+                {/*<Image*/}
+                {/*    className={styles.man_mobile}*/}
+                {/*    alt="man_mobile"*/}
+                {/*    src="/images/man.webp"*/}
+                {/*    width={150}*/}
+                {/*    height={230}*/}
+                {/*    priority*/}
+                {/*/>*/}
                 <div className={styles.consult}>
                     <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
                 </div>
@@ -139,7 +139,8 @@ export default function HomePage() {
                                     src="/images/icon_email.svg"
                                     alt="icon_email"
                                     width={48}
-                                    height={48}
+                                    height = {48}
+                                    style={{ objectFit: 'contain' }}
                                     className={styles.icon_email}
                                 />
                             </div>
@@ -147,8 +148,8 @@ export default function HomePage() {
                             <div className={styles.contact_group}>
                                 <div className={styles.contact_text}>
                                     <p>+972-505-382121</p>
-                                    <p>+972-544-4388831</p>
-                                    <p>+972-502-8621927</p>
+                                    <p>+972-544-388831</p>
+                                    <p>+972-508-621927</p>
                                 </div>
                                 <Image
                                     src="/images/icon_tel.svg"
