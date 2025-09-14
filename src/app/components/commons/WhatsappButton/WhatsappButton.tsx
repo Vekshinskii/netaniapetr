@@ -4,7 +4,6 @@ import React from 'react';
 
 type WhatsappButtonProps = {
     // Базовые пропсы
-    phone?: string;
     message?: string;
 
     // Стилизация
@@ -20,7 +19,6 @@ type WhatsappButtonProps = {
 };
 
 export default function WhatsappButton({
-                                           phone = '972547615507',
                                            message,
                                            className,
                                            svgClassName,
@@ -32,8 +30,8 @@ export default function WhatsappButton({
                                        }: WhatsappButtonProps) {
 
     const href = message
-        ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
-: `https://wa.me/${phone}`;
+        ? `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}?text=${encodeURIComponent(message)}`
+: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}`;
 
     return (
         <Link
