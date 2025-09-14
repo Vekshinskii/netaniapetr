@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import s from "./ConsultationModal.module.css";
 import * as emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 type Props = { open: boolean; onClose: () => void };
 
 export default function ConsultationModal({ open, onClose }: Props) {
     const [submitted, setSubmitted] = useState(false);
+    const [agreed, setAgreed] = useState(false);
     const nameRef = useRef<HTMLInputElement>(null);
     const form = useRef<HTMLFormElement>(null);
 
@@ -16,6 +18,7 @@ export default function ConsultationModal({ open, onClose }: Props) {
     useEffect(() => {
         if (open) {
             setSubmitted(false);
+            setAgreed(false);
             document.body.style.overflow = "hidden";
             requestAnimationFrame(() => nameRef.current?.focus());
         } else {
@@ -35,6 +38,11 @@ export default function ConsultationModal({ open, onClose }: Props) {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
+
+        if (!agreed) {
+            alert("Пожалуйста, дайте согласие на обработку персональных данных");
+            return;
+        }
 
         if (!form.current) {
             console.error('Form reference is null');
@@ -93,6 +101,33 @@ export default function ConsultationModal({ open, onClose }: Props) {
                                 <span>Удобное время для связи</span>
                                 <input name="message" type="text" placeholder="Напр.: сегодня 14:00–18:00"/>
                             </label>
+
+                            <div className={s.consent}>
+                                <label className={s.checkboxLabel}>
+                                    <input
+                                        type="checkbox"
+                                        checked={agreed}
+                                        onChange={(e) => setAgreed(e.target.checked)}
+                                        required
+                                        className={s.checkbox}
+                                    />
+                                    <span className={s.checkmark}></span>
+                                    <span className={s.consentText}>
+                                        Я согласен на обработку{" "}
+                                        <Link href="/privacy-policy" className={s.link}>
+                                            персональных данных
+                                        </Link>{" "}
+                                        в соответствии с{" "}
+                                        <Link href="/privacy-policy" className={s.link}>
+                                            Политикой конфиденциальности
+                                        </Link>{" "}
+                                        и принимаю{" "}
+                                        <Link href="/terms-of-service" className={s.link}>
+                                            Пользовательское соглашение
+                                        </Link>
+                                    </span>
+                                </label>
+                            </div>
 
                             <div className={s.actions}>
                                 <button className={s.submit} type="submit">Отправить</button>
