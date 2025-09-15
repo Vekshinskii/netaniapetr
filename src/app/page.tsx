@@ -97,17 +97,7 @@ export default function HomePage() {
                 </nav>
             </div>
             <div className={styles.consult_wrapper}>
-                {/*<Image*/}
-                {/*    className={styles.man_mobile}*/}
-                {/*    alt="man_mobile"*/}
-                {/*    src="/images/man.webp"*/}
-                {/*    width={150}*/}
-                {/*    height={230}*/}
-                {/*    priority*/}
-                {/*/>*/}
-                <div className={styles.consult}>
                     <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
-                </div>
             </div>
             {/* ABOUT + CONTACT */}
             <section className={styles.about_page} id="about">

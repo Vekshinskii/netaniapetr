@@ -365,8 +365,8 @@
         border-bottom: 3px solid #125956;
         outline: none;
         resize: none;
-        width: 40vw;
-        height: 7vh;
+        width: fit-content;
+        height: 2vh;
     }
     .customTextarea::placeholder {
         font-size: 1.2rem;
@@ -451,7 +451,109 @@
         font-size: 1.7rem;
         z-index: 10000;
     }
+    .consent {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-wrap: nowrap;
+    }
+
+    .checkboxLabel {
+        position: relative;
+        display: grid;
+        grid-template-columns: 24px 1fr; /* коробочка + текст */
+        gap: 8px;
+        align-items: start;
+        cursor: pointer;
+        user-select: none;
+        color: #125956;
+    }
+
+    /* прячем «системную» коробочку, остаётся в потоке для доступности */
+    .checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* видимая кастомная коробочка */
+    .checkmark {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #125956;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 1px 0 rgba(0,0,0,.05) inset;
+        transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    /* состояние наведения */
+    .checkboxLabel:hover .checkmark {
+        border-color: #0f4947;
+    }
+
+    /* фокус клавиатурой по реальному input */
+    .checkbox:focus-visible + .checkmark {
+        outline: 3px solid rgba(51,190,179,.45);
+        outline-offset: 3px;
+    }
+
+    /* отмечено */
+    .checkbox:checked + .checkmark {
+        background: #33BEB3;
+        border-color: #33BEB3;
+    }
+
+    /* галочка */
+    .checkbox:checked + .checkmark::after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 2px;
+        width: 7px;
+        height: 14px;
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+
+    /* текст рядом с чекбоксом */
+    .consentText {
+        font: 400 15px/1.45 "Roboto Condensed", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: white;
+        text-wrap: nowrap;
+        width: 100%;
+        margin-bottom: 3vw;
+    }
+
+    /* ссылки внутри согласия */
+    .link {
+        color: #125956;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .link:hover {
+        color: #33BEB3;
+    }
+
+    /* кнопка «Отправить»: состояние disabled */
+    .send_button[disabled] {
+        opacity: .6;
+        cursor: not-allowed;
+        filter: grayscale(20%);
+    }
 }
+
+@media (max-width: 480px) {
+    .checkboxLabel { font-size: 13px; }
+    .consentText { line-height: 1.35; }
+}
+@media (max-width: 360px) {
+    .consentText { font-size: 12px; }
+    .link { display: inline; }
+}
+
 @media (min-width: 550px) and (max-width: 940px){
     .elem_light_mobile {
         height: 97vh;
