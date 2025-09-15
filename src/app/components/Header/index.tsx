@@ -1,10 +1,11 @@
 "use client";
 
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
+import * as emailjs from "@emailjs/browser";
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
@@ -12,6 +13,10 @@ export default function Header() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const pathname = usePathname();
+    const nameRef = useRef<HTMLInputElement>(null);
+    const [submitted, setSubmitted] = useState(false);
+    const [agreed, setAgreed] = useState(false);
+    const form = useRef<HTMLFormElement>(null);
 
     // удобная функция закрыть всё
     const closeAll = () => {
@@ -58,6 +63,41 @@ export default function Header() {
         closeAll();
     }, [pathname]);
 
+    function handleSubmit(e: React.FormEvent) {
+            e.preventDefault();
+    
+            if (!agreed) {
+                alert("Пожалуйста, дайте согласие на обработку персональных данных");
+                return;
+            }
+    
+            if (!form.current) {
+                console.error('Form reference is null');
+                return;
+            }
+    
+            emailjs
+                .sendForm(
+                    process.env.EMAILJS_SERVICE_ID!, 
+                    process.env.EMAILJS_TEMPLATE_ID!, 
+                    form.current, {
+                        publicKey: process.env.EMAILJS_PUBLIC_KEY!,
+                })
+                .then(
+                    () => {
+                        //setShowModal(true);
+                        console.log('SUCCESS!');
+                        form.current?.reset();
+                    },
+                    (error) => {
+                        console.log('FAILED...', error.text);
+                    },
+                );
+    
+            setSubmitted(true);
+            closeAll();
+        }
+
     return (
         <>
             <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
@@ -79,6 +119,9 @@ export default function Header() {
                 </div>
 
                 {/* навигация */}
+                {submitted ? (
+                    <div className={styles.success} role="status">Спасибо! Мы свяжемся с вами.</div>
+                ) : (
                 <nav className={`${styles.nav} ${navActive ? styles.active : ""}`}>
                     <Image
                         className={styles.elem_nav}
@@ -131,26 +174,53 @@ export default function Header() {
                             width={800}
                             height={800}
                         />
-                        <form className={styles.form} onSubmit={(e) => { e.preventDefault(); closeAll(); }}>
+
+                        <form className={styles.form} ref={form} onSubmit={handleSubmit}>
                             <span className={styles.form_group}>
-                <input name="name" id="name" type="text" placeholder="Имя"/>
-              </span>
+                                <input  ref={nameRef} name="name" id="name" type="text" placeholder="Имя"/>
+                            </span>
                             <span className={styles.form_group}>
-                <input name="phone" id="phone" type="tel" placeholder="Телефон"/>
-              </span>
+                                <input name="contact" id="phone" type="tel" placeholder="Телефон"/>
+                            </span>
                             <div className={styles.form_group}>
-                <textarea
-                    className={styles.customTextarea}
-                    placeholder={`Удобное\nвремя для связи`}
-                    rows={1}
-                />
+                            <label className={styles.customTextarea}>
+                                <span>Удобное время для связи</span>
+                                <input name="message" type="text" placeholder={`Удобное\nвремя для связи`}/>
+                            </label>
+                            </div>
+                            <div className={styles.consent}>
+                                <label className={styles.checkboxLabel}>
+                                    <input
+                                        type="checkbox"
+                                        checked={agreed}
+                                        onChange={(e) => setAgreed(e.target.checked)}
+                                        required
+                                        className={styles.checkbox}
+                                    />
+                                    <span className={styles.checkmark}></span>
+                                    <span className={styles.consentText}>
+                                        Я согласен на обработку{" "}
+                                        <Link href="/privacy-policy" className={styles.link}>
+                                            персональных данных
+                                        </Link>{" "}
+                                        в соответствии с{" "}
+                                        <Link href="/privacy-policy" className={styles.link}>
+                                            Политикой конфиденциальности
+                                        </Link>{" "}
+                                        и принимаю{" "}
+                                        <Link href="/terms-of-service" className={styles.link}>
+                                            Пользовательское соглашение
+                                        </Link>
+                                    </span>
+                                </label>
                             </div>
                             <button className={styles.send_button} type="submit">
                                 Отправить
                             </button>
                         </form>
+
                     </div>
-                </nav>
+                </nav>)}
 
                 <div className={styles.tel}>
                     <Image

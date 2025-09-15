@@ -507,3 +507,35 @@
         margin-inline-start: 4vw;
     }
 }
+
+@media (max-width:480px){
+    .checkboxLabel {
+        font-size: 13px;
+    }
+    
+    .consentText {
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 360px) {
+    .consentText {
+        font-size: 12px;
+    }
+    
+    .link {
+        display: block;
+        margin: 2px 0;
+    }
+}
+
+
+.success{
+    padding: 22px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(51,190,179,.12), rgba(51,190,179,.06));
+    border: 2px solid rgba(51,190,179,.35);
+    color: #125956;
+    font: 700 18px/1.3 "Roboto Condensed", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    text-align: center;
+}

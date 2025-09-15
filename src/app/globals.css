@@ -410,7 +410,7 @@ html[dir="rtl"] .slider_wrapper .docs-next{ left:8px; right:auto; }
 .policy-container,
 .terms-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin-top: 11vh;
     padding: 40px 20px;
     line-height: 1.6;
     color: #125956;
