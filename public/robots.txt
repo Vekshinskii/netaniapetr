@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Sitemap: https://ваш-сайт.ру/sitemap.xml
+Sitemap: https://netaniapeter.com/sitemap.xml

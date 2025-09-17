@@ -18,7 +18,6 @@ export default function Header() {
     const [agreed, setAgreed] = useState(false);
     const form = useRef<HTMLFormElement>(null);
 
-    // удобная функция закрыть всё
     const closeAll = () => {
         setNavActive(false);
         setDropdownOpen(false);
@@ -31,7 +30,6 @@ export default function Header() {
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
-    // если выходим из мобильной ширины — всё закрыть
     useEffect(() => {
         if (!isMobile) {
             setNavActive(false);
@@ -39,7 +37,6 @@ export default function Header() {
         }
     }, [isMobile]);
 
-    // тень/фон при скролле + корректная инициализация при reload
     useEffect(() => {
         const THRESHOLD = 10;
         const apply = () => setScrolled(window.scrollY > THRESHOLD);
@@ -53,12 +50,10 @@ export default function Header() {
         };
     }, []);
 
-    // запрет скролла при открытом меню
     useEffect(() => {
         document.body.style.overflow = navActive ? "hidden" : "";
     }, [navActive]);
 
-    // закрывать меню/дропдаун при смене маршрута (клик по Link) — даже если без перезагрузки
     useEffect(() => {
         closeAll();
     }, [pathname]);
@@ -85,7 +80,6 @@ export default function Header() {
                 })
             .then(
                 () => {
-                    //setShowModal(true);
                     console.log('SUCCESS!');
                     form.current?.reset();
                 },
@@ -105,7 +99,6 @@ export default function Header() {
                     «НАТАНИЯ <span className={styles.second_part_logo}>– ПЕТР»</span>
                 </Link>
 
-                {/* бургер */}
                 <div
                     className={`${styles.burgerMenu} ${navActive ? styles.active : ""}`}
                     onClick={() => {
@@ -118,7 +111,6 @@ export default function Header() {
                     <div className={styles.bar}></div>
                 </div>
 
-                {/* навигация */}
                 {submitted ? (
                     <div className={styles.success} role="status">Спасибо! Мы свяжемся с вами.</div>
                 ) : (
@@ -131,7 +123,6 @@ export default function Header() {
                             height={800}
                         />
 
-                        {/* все ссылки закрывают меню */}
                         <Link href="/#about_info" className={styles.nav_link} onClick={closeAll}>
                             О НАС
                         </Link>
@@ -201,7 +192,6 @@ export default function Header() {
                                 </div>
                                 <div className={styles.consent}>
                                     <label className={styles.checkboxLabel}>
-                                        {/* реальный элемент формы */}
                                         <input
                                             id="consent"
                                             name="consent"
@@ -212,9 +202,7 @@ export default function Header() {
                                             required
                                             className={styles.checkbox}
                                         />
-                                        {/* кастомная коробочка */}
                                         <span className={styles.checkmark} aria-hidden="true"/>
-                                        {/* текст с ссылками */}
                                         <span className={styles.consentText}>
                                             Я принимаю{" "}
                                             <Link href="/privacy-policy" className={styles.link}>

@@ -21,15 +21,13 @@ const robotoCondensed = Roboto_Condensed({
 export const metadata: Metadata = {
     title: "НАТАНИЯ – ПЕТР",
     description: "Перевод документов и смежные услуги в Израиле",
-    // если есть домен — раскомментируй:
-    // metadataBase: new URL("https://natania-petr.example"),
+    metadataBase: new URL("https://netaniapeter.com"),
     icons: {
         icon: "/favicon.ico",
     },
     manifest: "/manifest.webmanifest",
 };
 
-// Новый способ задания viewport в Next 13.4+/15
 export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,

@@ -14,7 +14,6 @@ export default function ConsultationModal({ open, onClose }: Props) {
     const nameRef = useRef<HTMLInputElement>(null);
     const form = useRef<HTMLFormElement>(null);
 
-    // focus + блокировка скролла
     useEffect(() => {
         if (open) {
             setSubmitted(false);
@@ -27,7 +26,6 @@ export default function ConsultationModal({ open, onClose }: Props) {
         return () => { document.body.style.overflow = ""; };
     }, [open]);
 
-    // закрытие по Esc
     useEffect(() => {
         function onEsc(e: KeyboardEvent) {
             if (e.key === "Escape" && open) onClose();
@@ -58,7 +56,6 @@ export default function ConsultationModal({ open, onClose }: Props) {
             })
             .then(
                 () => {
-                    //setShowModal(true);
                     console.log('SUCCESS!');
                     form.current?.reset();
                 },

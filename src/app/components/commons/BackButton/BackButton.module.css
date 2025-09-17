@@ -67,7 +67,6 @@
 :global([dir="rtl"]) .back { flex-direction: row-reverse; }
 :global([dir="rtl"]) .icon svg { transform: scaleX(-1); }
 
-/* ========= Адаптация ========= */
 @media (max-width: 768px) {
     .back {
         width: fit-content;

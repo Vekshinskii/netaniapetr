@@ -158,7 +158,6 @@
     z-index: 90;
 }
 
-/* адаптив */
 @media (max-width: 1030px) {
     .nav {
         position: fixed;
@@ -417,7 +416,7 @@
     .burgerMenu {
         display: flex;
     }
-    /* Анимация бургер-кнопки при открытии */
+ 
     .burgerMenu.active .bar:nth-child(1) {
         transform: rotate(45deg) translate(8px, 9px);
     }
@@ -430,7 +429,6 @@
         transform: rotate(-45deg) translate(5px, -6px);
     }
 
-    /* Дополнительные стили для мобильной версии */
     .header {
         justify-content: space-between;
         padding: 15px;
@@ -470,14 +468,12 @@
         color: #125956;
     }
 
-    /* прячем «системную» коробочку, остаётся в потоке для доступности */
     .checkbox {
         position: absolute;
         opacity: 0;
         pointer-events: none;
     }
 
-    /* видимая кастомная коробочка */
     .checkmark {
         width: 24px;
         height: 24px;
@@ -488,24 +484,20 @@
         transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
 
-    /* состояние наведения */
     .checkboxLabel:hover .checkmark {
         border-color: #0f4947;
     }
 
-    /* фокус клавиатурой по реальному input */
     .checkbox:focus-visible + .checkmark {
         outline: 3px solid rgba(51,190,179,.45);
         outline-offset: 3px;
     }
 
-    /* отмечено */
     .checkbox:checked + .checkmark {
         background: #33BEB3;
         border-color: #33BEB3;
     }
 
-    /* галочка */
     .checkbox:checked + .checkmark::after {
         content: "";
         position: absolute;
@@ -518,7 +510,6 @@
         transform: rotate(45deg);
     }
 
-    /* текст рядом с чекбоксом */
     .consentText {
         font: 400 15px/1.45 "Roboto Condensed", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         color: white;
@@ -527,7 +518,6 @@
         margin-bottom: 3vw;
     }
 
-    /* ссылки внутри согласия */
     .link {
         color: #125956;
         text-decoration: underline;
@@ -537,7 +527,6 @@
         color: #33BEB3;
     }
 
-    /* кнопка «Отправить»: состояние disabled */
     .send_button[disabled] {
         opacity: .6;
         cursor: not-allowed;

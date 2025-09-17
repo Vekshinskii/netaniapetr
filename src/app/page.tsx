@@ -99,7 +99,6 @@ export default function HomePage() {
             <div className={styles.consult_wrapper}>
                     <h2>КОНСУЛЬТАЦИЯ ПО ТЕЛЕФОНУ - БЕСПЛАТНО!</h2>
             </div>
-            {/* ABOUT + CONTACT */}
             <section className={styles.about_page} id="about">
                 <div className={styles.contact_page}>
                     <div className={styles.contact_part}>

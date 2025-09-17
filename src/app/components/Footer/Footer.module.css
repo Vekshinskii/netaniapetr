@@ -1,4 +1,3 @@
-/* Контейнер с фоном на всю ширину */
 .footer_container {
     width: 100%;
     background: #B9F4D4;
@@ -6,7 +5,6 @@
 }
 
 .footer {
-    /*max-width: 1200px;           !* при желании поменяй *!*/
     margin: 0 auto;
     padding: 12px 24px;
     display: grid;
@@ -54,7 +52,6 @@
 .nav_to_section:hover,
 .nav_to_section:focus-visible { color: #33BEB3; }
 
-/* “Created by HexoBee” — маленькая строка под меню */
 .create {
     text-decoration: none;
     margin-top: 10px;

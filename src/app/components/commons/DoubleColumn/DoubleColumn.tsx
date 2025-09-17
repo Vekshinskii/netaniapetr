@@ -57,7 +57,6 @@ const DoubleColumn: React.FC<IDoubleColumn> = ({
     ];
 
     if (isMobile) {
-        // const isRTL = typeof document !== 'undefined' && document?.dir === 'rtl';
         return (
             <div className="slider_wrapper">
                 <button className="docs-prev" aria-label="Назад" />
@@ -81,8 +80,7 @@ const DoubleColumn: React.FC<IDoubleColumn> = ({
             </div>
         );
     }
-
-    // Десктоп/планшет: 2 (или 3) колонки
+    
     return (
         <div className={styles.dbl_col_wrapper}>
             <div className={styles.dbl_col}>

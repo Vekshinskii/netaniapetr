@@ -45,7 +45,7 @@ export default function TopPageContent({
                         <Image
                             src={img_src}
                             alt="article image"
-                            fill                 // <- вместо width/height
+                            fill
                             className={styles.photo}
                             priority={false}
                         />

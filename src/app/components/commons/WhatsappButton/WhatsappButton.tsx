@@ -3,17 +3,13 @@ import Link from 'next/link';
 import React from 'react';
 
 type WhatsappButtonProps = {
-    // Базовые пропсы
     message?: string;
-
-    // Стилизация
     className?: string;
     svgClassName?: string;
     style?: React.CSSProperties;
     svgStyle?: React.CSSProperties;
     size?: number;
 
-    // Поведение ссылки
     openInNewTab?: boolean;
     onClick?: () => void;
 };
