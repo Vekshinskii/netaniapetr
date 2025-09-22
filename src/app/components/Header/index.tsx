@@ -42,11 +42,11 @@ export default function Header() {
         const apply = () => setScrolled(window.scrollY > THRESHOLD);
         apply();
         const onScroll = () => setScrolled(window.scrollY > THRESHOLD);
-        window.addEventListener('scroll', onScroll, {passive: true});
-        window.addEventListener('resize', onScroll, {passive: true});
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll, { passive: true });
         return () => {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onScroll);
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
         };
     }, []);
 
@@ -54,20 +54,16 @@ export default function Header() {
         document.body.style.overflow = navActive ? "hidden" : "";
     }, [navActive]);
 
-    useEffect(() => {
-        closeAll();
-    }, [pathname]);
+    useEffect(() => { closeAll(); }, [pathname]);
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-
         if (!agreed) {
             alert("Пожалуйста, дайте согласие на обработку персональных данных");
             return;
         }
-
         if (!form.current) {
-            console.error('Form reference is null');
+            console.error("Form reference is null");
             return;
         }
 
@@ -75,20 +71,23 @@ export default function Header() {
             .sendForm(
                 process.env.EMAILJS_SERVICE_ID!,
                 process.env.EMAILJS_TEMPLATE_ID!,
-                form.current, {
-                    publicKey: process.env.EMAILJS_PUBLIC_KEY!,
-                })
+                form.current,
+                { publicKey: process.env.EMAILJS_PUBLIC_KEY! }
+            )
             .then(
                 () => {
-                    console.log('SUCCESS!');
+                    console.log("SUCCESS!");
                     form.current?.reset();
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
-                },
+                    console.log("FAILED...", error.text);
+                }
             );
 
         setSubmitted(true);
+        form.current.reset();
+        setAgreed(false);
+        setTimeout(() => setSubmitted(false), 900);
         closeAll();
     }
 
@@ -99,10 +98,11 @@ export default function Header() {
                     «НАТАНИЯ <span className={styles.second_part_logo}>– ПЕТР»</span>
                 </Link>
 
+                {/* Бургер */}
                 <div
                     className={`${styles.burgerMenu} ${navActive ? styles.active : ""}`}
                     onClick={() => {
-                        setNavActive(v => !v);
+                        setNavActive((v) => !v);
                         setDropdownOpen(false);
                     }}
                 >
@@ -112,7 +112,9 @@ export default function Header() {
                 </div>
 
                 {submitted ? (
-                    <div className={styles.success} role="status">Спасибо! Мы свяжемся с вами.</div>
+                    <div onClick={() => setSubmitted(false)} className={styles.success} role="status">
+                        Спасибо! Мы свяжемся с вами.
+                    </div>
                 ) : (
                     <nav className={`${styles.nav} ${navActive ? styles.active : ""}`}>
                         <Image
@@ -132,40 +134,44 @@ export default function Header() {
 
                         <div
                             className={styles.dropdown}
-                            onMouseEnter={() => {
-                                if (!isMobile) setDropdownOpen(true);
-                            }}
-                            onMouseLeave={() => {
-                                if (!isMobile) setDropdownOpen(false);
-                            }}
+                            onMouseEnter={() => { if (!isMobile) setDropdownOpen(true); }}
+                            onMouseLeave={() => { if (!isMobile) setDropdownOpen(false); }}
                         >
                             <div
                                 className={styles.dropdownBtn}
-                                onClick={() => {
-                                    if (isMobile) setDropdownOpen(o => !o);
-                                }}
+                                onClick={() => { if (isMobile) setDropdownOpen((o) => !o); }}
                             >
                                 УСЛУГИ
                             </div>
 
                             <div className={`${styles.dropdownContent} ${dropdownOpen ? styles.show : ""}`}>
-                                <Link className={styles.navi_to} href="/translate_docs_apostille" onClick={closeAll}>Переводы
-                                    документов. Апостиль</Link>
-                                <Link className={styles.navi_to} href="/citizenship" onClick={closeAll}>Оформление
-                                    гражданства</Link>
-                                <Link className={styles.navi_to} href="/docs_from_abroad" onClick={closeAll}>Истребование
-                                    документов из-за границы</Link>
-                                <Link className={styles.navi_to} href="/permissions" onClick={closeAll}>Доверенности,
-                                    разрешение на выезд</Link>
-                                <Link className={styles.navi_to} href="/marriage_utah" onClick={closeAll}>Браки без
-                                    выезда. Брак в штате Юта</Link>
-                                <Link className={styles.navi_to} href="/stupro" onClick={closeAll}>Совместное
-                                    проживание. СТУПРО</Link>
-                                <Link className={styles.navi_to} href="/divorces" onClick={closeAll}>Разводы</Link>
-                                <Link className={styles.navi_to} href="/paternity_proof" onClick={closeAll}>Подтверждение
-                                    отцовства</Link>
-                                <Link className={styles.navi_to} href="/inheritance_testament" onClick={closeAll}>Завещание.
-                                    Наследство</Link>
+                                <Link className={styles.navi_to} href="/translate_docs_apostille" onClick={closeAll}>
+                                    Переводы документов. Апостиль
+                                </Link>
+                                <Link className={styles.navi_to} href="/citizenship" onClick={closeAll}>
+                                    Оформление гражданства
+                                </Link>
+                                <Link className={styles.navi_to} href="/docs_from_abroad" onClick={closeAll}>
+                                    Истребование документов из-за границы
+                                </Link>
+                                <Link className={styles.navi_to} href="/permissions" onClick={closeAll}>
+                                    Доверенности, разрешение на выезд
+                                </Link>
+                                <Link className={styles.navi_to} href="/marriage_utah" onClick={closeAll}>
+                                    Браки без выезда. Брак в штате Юта
+                                </Link>
+                                <Link className={styles.navi_to} href="/stupro" onClick={closeAll}>
+                                    Совместное проживание. СТУПРО
+                                </Link>
+                                <Link className={styles.navi_to} href="/divorces" onClick={closeAll}>
+                                    Разводы
+                                </Link>
+                                <Link className={styles.navi_to} href="/paternity_proof" onClick={closeAll}>
+                                    Подтверждение отцовства
+                                </Link>
+                                <Link className={styles.navi_to} href="/inheritance_testament" onClick={closeAll}>
+                                    Завещание. Наследство
+                                </Link>
                             </div>
                         </div>
 
@@ -179,17 +185,16 @@ export default function Header() {
                             />
 
                             <form className={styles.form} ref={form} onSubmit={handleSubmit}>
-                            <span className={styles.form_group}>
-                                <input ref={nameRef} name="name" id="name" type="text" placeholder="Имя"/>
-                            </span>
                                 <span className={styles.form_group}>
-                                <input name="contact" id="phone" type="tel" placeholder="Телефон"/>
-                            </span>
+                                    <input ref={nameRef} name="name" id="name" type="text" placeholder="Имя" />
+                                </span>
+                                <span className={styles.form_group}>
+                                    <input name="contact" id="phone" type="tel" placeholder="Телефон" />
+                                </span>
                                 <div className={styles.form_group}>
-                                    <input className={styles.customTextarea} name="message" type="text"
-                                           placeholder={`Удобное  время`}/>
-
+                                    <input className={styles.customTextarea} name="message" type="text" placeholder="Удобное  время" />
                                 </div>
+
                                 <div className={styles.consent}>
                                     <label className={styles.checkboxLabel}>
                                         <input
@@ -202,40 +207,33 @@ export default function Header() {
                                             required
                                             className={styles.checkbox}
                                         />
-                                        <span className={styles.checkmark} aria-hidden="true"/>
+                                        <span className={styles.checkmark} aria-hidden="true" />
                                         <span className={styles.consentText}>
-                                            Я принимаю{" "}
-                                            <Link href="/privacy-policy" className={styles.link}>
-                                            условия
-                                         </Link>{<br/>}
-                                            и{" "}
-                                            <Link href="/terms-of-service" className={styles.link}>
-                                            соглашение
-                                        </Link>
+                                            <span className={styles.line}>
+                                                Я принимаю&nbsp;
+                                                <Link href="/privacy-policy" className={styles.link}>условия</Link>
+                                            </span>
+                                            <span className={styles.line}>
+                                                и&nbsp;
+                                                <Link href="/terms-of-service" className={styles.link}>соглашение</Link>
+                                            </span>
                                         </span>
                                     </label>
                                 </div>
-                                <button className={styles.send_button} type="submit">
-                                    Отправить
-                                </button>
-                            </form>
 
+                                <button className={styles.send_button} type="submit">Отправить</button>
+                            </form>
                         </div>
-                    </nav>)}
+                    </nav>
+                )}
 
                 <div className={styles.tel}>
-                    <Image
-                        className={styles.phone_icon}
-                        alt="phone_icon"
-                        src="/images/icon_phone.svg"
-                        width={32}
-                        height={32}
-                    />
+                    <Image className={styles.phone_icon} alt="phone_icon" src="/images/icon_phone.svg" width={32} height={32} />
                     +(972)50-5382121
                 </div>
             </header>
-            {navActive && (<div className={styles.blurOverlay} onClick={closeAll}/>
-            )}
+
+            {navActive && <div className={styles.blurOverlay} onClick={closeAll} />}
         </>
     );
 }

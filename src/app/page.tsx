@@ -64,9 +64,7 @@ export default function HomePage() {
                         priority
                     />
                 </div>
-
-
-                <nav className={styles.list_services} aria-label="Список услуг">
+<nav className={styles.list_services} aria-label="Список услуг">
                     <Link className={styles.navi_to} href="/translate_docs_apostille">
                         Переводы документов.<br/>Апостиль
                     </Link>
@@ -133,8 +131,7 @@ export default function HomePage() {
                                     className={styles.icon_email}
                                 />
                             </div>
-
-                            <div className={styles.contact_group}>
+<div className={styles.contact_group}>
                                 <div className={styles.contact_text}>
                                     <p>+972-505-382121</p>
                                     <p>+972-544-388831</p>

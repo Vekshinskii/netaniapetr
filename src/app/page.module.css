@@ -99,7 +99,7 @@
 /*.man_mobile {*/
 /*    display: none;*/
 /*}*/
-.consult {
+.consult_wrapper {
     position: absolute;
     top:  calc(var(--index) *27);
     left: 0;
@@ -186,7 +186,7 @@
     align-items: flex-start;
     justify-content: flex-end;
 
-    h1 {
+h1 {
         margin-bottom: 2.5vw;
     }
 }
@@ -317,7 +317,7 @@
         width: calc(var(--index) * 25);
         height:  calc(var(--index) * 36);
     }
-    .consult {
+    .consult_wrapper {
         margin-top: calc(var(--index) * 3);
             padding-inline-start:  calc(var(--index) * 4.5);
     }
@@ -335,7 +335,7 @@
     .contact_group_blue {
         width: 100%;
     }
-    .consult {
+    .consult_wrapper {
         padding-inline-start:  calc(var(--index) * 2.5);
     }
     .content {
@@ -361,7 +361,7 @@
         display: none;
     }
 
-    .elem_light_mobile {
+.elem_light_mobile {
         position: absolute;
         top: 0;
         right: 0;
@@ -406,6 +406,7 @@
         position: relative;
         width: 100%;
         height: 5vh;
+        top: auto;
         min-height: fit-content;
         background-color: #B9F4D4;
         align-items: center;
@@ -553,7 +554,7 @@
        right: 20px;
         z-index: 1000;
 
-   }
+}
     .whatsapp_desk,
     .consultbutton_desk {
         display: none;

@@ -26,7 +26,13 @@ export default function Footer() {
                     >
                         Created by Hexobee
                     </Link>
-                </div>
+                     <div className={styles.footer_credits_desk}>
+                        Images from&#160;
+                        <Link href="https://freepik.com" target="_blank" rel="noopener noreferrer">&#160;Freepik</Link>
+                        &#160;and
+                        <Link href="https://stock.adobe.com" target="_blank" rel="noopener noreferrer">&#160;Adobe Stock</Link>
+                        </div>
+                    </div>
 
                 <a href="tel:+972505382121" className={styles.tel}>
                     <Image
@@ -47,6 +53,11 @@ export default function Footer() {
                 >
                     Created by Hexobee
                 </Link>
+                <div className={styles.footer_credits_mobile}>Images from&#160;
+                    <Link href="https://freepik.com" target="_blank" rel="noopener noreferrer">&#160;Freepik</Link>
+                    &#160;and
+                    <Link href="https://stock.adobe.com" target="_blank" rel="noopener noreferrer">&#160;Adobe Stock</Link>
+                </div>
             </footer>
 
         </div>
